@@ -1,7 +1,17 @@
+import BirdCards from "./components/BirdCards";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
+import birdData from "./data/birds";
+import bonusItems from "./data/bonusItems";
+import "./App.css"
+
+
+
 function App () {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <BirdCards birds={birdData}/>
+      
     </div>
   );
 };

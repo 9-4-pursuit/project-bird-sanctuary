@@ -1,0 +1,14 @@
+.card {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        grid-gap: 20px;
+        grid-template-rows: max-content 400px 1fr;
+        justify-content: center;
+        text-align: center;
+}
+
+.birds {
+    border: solid;
+    padding: 25px;
+    background-color: aqua;
+}
