@@ -22,13 +22,13 @@ export default function Cart(props) {
     //calculate the total and discount
     function calculate(){
         //add the totals together and assign to a variable
-        const sum = cart.reduce((acc, current)=> {
+        let sum = cart.reduce((acc, current)=> {
             return acc + current.amount;
         },0);
         //check for discount
         if (cart.length >= 3){
             setDiscount(10);
-
+            sum *= .9;
         } 
         //set the new total
         setTotal(sum);
@@ -43,7 +43,7 @@ export default function Cart(props) {
 
 
 
-    
+
     
 
     return(<div className="Cart">
