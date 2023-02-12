@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+.app {
+    border: 2px solid black;
+}
+
+.card {
+    border: 2px solid blue;
+}
+
+.cart {
+    border: 2px solid green;
+}
+
+.checkout {
+    border: 2px solid red;
+}
+
+img {
+    object-fit: cover;
+}
