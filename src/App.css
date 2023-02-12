@@ -1,28 +1,46 @@
-body{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-direction: column;
+.app {
+    display: grid;
+    grid-template-columns: auto auto
 
 }
+
+.cart {
+    display: grid;
+    border: 5px dashed bisque;
+    justify-content: center;
+    text-align: center;
+    
+}
+.form {
+    display: grid;
+    border: 5px dashed bisque;
+    justify-content: center;
+    text-align: center
+}
+
 .card {
     display: grid;
-    grid-template-columns: auto;
-    flex-wrap: wrap;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+    justify-content: center;
+    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 50px;
     }
+
 li {
-    background-color: burlywood;
+    background-color: rgb(94, 178, 187);
     list-style: none;
     width: 100%;
+    margin: 20px;
     border: 5px dashed bisque;
     justify-content: center;
     text-align: center;
 }
 
 .img {
-max-width: 100px;
+max-width: 150px;
 text-decoration: underline 25px;
 text-align: center;
 justify-content: center
