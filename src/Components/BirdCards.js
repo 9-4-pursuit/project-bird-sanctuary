@@ -1,18 +1,20 @@
-BirdCard="5"
+import BirdCard from "./birdCard";
+
+function BirdCards () {
+    return (
+      <div>
+        <h1>Hello, Birdcards!</h1>
 
 
-// function BirdCards () {
-//     return (
-//       <div>
-//         <h1>Hello, Birdcards!</h1>
-//         {/* <BirdCard />
-//         <BirdCard />
-//         <BirdCard />
-//         <BirdCard />
-//         <BirdCard />  
-//         <BirdCard /> */}
-//       </div>
-//     );
-//   };
+<BirdCard />
+        {/* <BirdCard />
+        <BirdCard />
+        <BirdCard />
+        <BirdCard />
+        <BirdCard />  
+        <BirdCard /> */}
+      </div>
+    );
+  };
   
-//   export default BirdCards;
+  export default BirdCards;

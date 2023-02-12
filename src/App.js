@@ -5,8 +5,7 @@ import Alert from "./Components/Alert";
 
 
 function App () {
-  
-  
+
   
   return (
     <div className="App">
