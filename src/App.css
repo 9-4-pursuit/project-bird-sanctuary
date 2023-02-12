@@ -1,0 +1,21 @@
+
+.card {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 30%;
+    font-size: small;
+    
+}
+
+li {
+list-style: none;
+border: 3px solid red;
+text-align: center;
+}
+
+img {
+    width: 30%;
+}
+li p{
+    font-size: large;
+}
