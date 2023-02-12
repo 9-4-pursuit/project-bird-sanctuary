@@ -5,13 +5,22 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import './App.css'
 import bonusItems from "./data/bonusItems"
-
+import { useState } from "react";
 
 
 function App () {
+  const [adoptBird, setAdoptBird] = useState("");
+
+  function handleAdopt() {
+    setAdoptBird()
+  }
+
+  
+
+
   return (
     <div className="app">
-        <Cart />
+        <Cart bonusItems={bonusItems}/>
         <BirdCards birdData={birdData}/>
         <Checkout />
     </div>
