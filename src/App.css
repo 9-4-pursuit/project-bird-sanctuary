@@ -1,0 +1,22 @@
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.img {
+    max-width: 250px;
+    border-bottom: 25px;
+}
+
+li {
+    list-style: none;
+    border: 10px solid orangered
+}
+
+button {
+    background-color: yellowgreen;
+    justify-content: center;
+}
