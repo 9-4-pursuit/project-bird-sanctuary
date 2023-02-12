@@ -1,0 +1,41 @@
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.birds {
+    border: solid;
+    padding: 25px;
+    background-color: aqua;
+}
+
+button {
+    background-color: aliceblue;
+    justify-content: center;
+}
+.img {
+    max-width: 100px;
+    text-decoration: wavy;
+    justify-content: center;
+}
+
+
+li  {
+    list-style: none;
+    /* border: 3px solid coral;
+    width: 100%; */
+} 
+
+
+
+
+/* body {
+    display: flex;
+    align-items: center;
+} */
+
