@@ -1,10 +1,10 @@
 
 
-function Cart({ cartItem, defaultStatus, bonusItem, total }) {
+function Cart({ cartItem, defaultStatus, bonusItem, total, discount }) {
     return (
         <div className="Cart">
             <h3>Cart</h3>
-            <h4>Discount: %</h4>
+            <h4>Discount: {discount}%</h4>
             <h4>Total: ${total}</h4>
             <ol>
                 {

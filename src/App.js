@@ -12,6 +12,7 @@ function App() {
   const [bonusItem, setBonusItem] = useState([])
   const [total, setTotal]= useState(0)
   const [totalArr, setTotalArr] = useState([])
+  const [discount, setDiscount] = useState(0)
   
   // let cartItems = []
   // let itemName;
@@ -23,11 +24,6 @@ function addingToCart(birdID){
   const birdArr = [...birdData]
   const bonusArr = [...bonusItems]
 
-  // if (!birdArr.length){
-  //   setTotal(100)
-  // }
-
- 
     setBonusIndex(bonusIndex + 1)
 
   const index = birdArr.findIndex((bird)=> birdID === bird.id)
@@ -46,6 +42,12 @@ const sum = totalArr.reduce(
 );
 setTotal(sum)
 
+if (cartItem.length >= 3){
+  setDiscount(10)
+} else {
+  setDiscount(0)
+}
+
  console.log(cartItem)
 toggleStatus(false)
 }
@@ -55,7 +57,7 @@ toggleStatus(false)
   return (
     <div className="app">
       <aside>
-      <Cart cartItem={cartItem} defaultStatus={defaultStatus} bonusItem={bonusItem} total={total}/>
+      <Cart cartItem={cartItem} defaultStatus={defaultStatus} bonusItem={bonusItem} total={total} discount={discount}/>
 
       </aside>
       <main>
