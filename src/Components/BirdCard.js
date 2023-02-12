@@ -1,5 +1,6 @@
 
 export default function BirdCard({bird, adoptBird}) {
+    
     return (
         <div className="card">
             <h6>{bird.name}</h6>
@@ -10,7 +11,7 @@ export default function BirdCard({bird, adoptBird}) {
             width="125px"
             height="125px"
             />
-            <button onClick={() => adoptBird(bird.id)}>Adopt</button>
+            <button onClick={() => adoptBird(bird)}>Adopt</button>
 
 
         </div>
