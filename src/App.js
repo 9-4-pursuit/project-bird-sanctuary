@@ -12,28 +12,34 @@ function App() {
   const [cartTotal, setCartTotal] = useState(null);
   const [discount, setDiscount] = useState(false);
 
-  console.log(cartContent, cartTotal);
-
-  function handleBirdCard(bird) { }
+  console.log(cartContent, cartTotal, discount);
 
   function adoptBird(bird) {
     console.log(bird);
     setCartTotal(cartTotal + bird.amount);
     setCartContent([...cartContent, bird]);
+    // if (cartContent.length >= 3) {
+    //   setDiscount(true);
+    //   console.log("TRUE!")
+    // }
   }
 
-  function addToCart() {}
+  function addToCart() { }
 
   return (
     <div className="app">
       <h1>Bird Sanctuary</h1>
       <Cart
         key="cart"
+        discount={discount}
         cartContent={cartContent}
         cartTotal={cartTotal}
       />
       <Checkout
-      key="checkout" />
+        key="checkout"
+        cartTotal={cartTotal}
+        cartContent={cartContent}
+      />
       {
         birds.map((bird) => {
           return <BirdCard

@@ -1,9 +1,9 @@
 
-export default function Cart({ cartContent, cartTotal }) {
+export default function Cart({ cartContent, cartTotal, discount }) {
     return (
         <div className="cart">
-            <h4>Cart</h4>
-            <p>Discount: { }%</p>
+            <h3>Cart</h3>
+            <p>Discount: {discount}%</p>
             <h4>Total: ${cartTotal}</h4>
             <ol>
                 {
@@ -11,13 +11,13 @@ export default function Cart({ cartContent, cartTotal }) {
                         return (
                             <li key={item.id}>
                                 {item.name} ${item.amount}.00
+                                <button>Delete</button>
                             </li>
                         )
                     })
                 }
             </ol>
             <p>Your donations have qualified you for the following items.</p>
-            <button>Delete</button>
 
         </div>
     )
