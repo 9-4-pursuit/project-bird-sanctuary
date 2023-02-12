@@ -1,0 +1,13 @@
+import React, { Component } from "react";
+import { ReactPropTypes } from "react";
+import PropTypes from "prop-types";
+import cx from "classnames";
+import styles from ".index.module.css"
+
+class AlertBox extends Component{
+    //other code to go here
+}
+
+export default AlertBox;
+
+//from learnersbucket.com/examples/react/create-alert-box-in-react
