@@ -7,19 +7,27 @@ import Cart from "./Components/Cart";
 
 function App() {
   const [birds, setBirds] = useState(birdData);
-  const [cartContent, setCartContent] = useState('');
+  const [cartContent, setCartContent] = useState([]);
   const [cartTotal, setCartTotal] = useState(null);
 
-  function handleBirdCard(bird) {
+  function handleBirdCard(bird) { }
 
+  function adoptBird(birdID) {
+    console.log(birdID)
   }
 
   return (
     <div className="app">
       <h1>Bird Sanctuary</h1>
-      <Cart key="cart" />
+      <Cart
+        key="cart"
+        cartContent={cartContent}
+        cartTotal={cartTotal} />
       {birds.map((bird) => {
-        return <BirdCard key={bird.id} bird={bird} />
+        return <BirdCard
+          key={bird.id}
+          bird={bird}
+          adoptBird={adoptBird} />
       })}
     </div>
   );

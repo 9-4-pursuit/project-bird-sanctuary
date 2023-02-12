@@ -1,17 +1,16 @@
 
-export default function BirdCard(props) {
+export default function BirdCard({bird, adoptBird}) {
     return (
         <div className="card">
-            <h6>{props.bird.name}</h6>
-            <p value={props.bird.amount}>Price ${props.bird.amount}</p>
+            <h6>{bird.name}</h6>
+            <p value={bird.amount}>Price ${bird.amount}</p>
             <img 
-            src={props.bird.img}
-            alt={`${props.bird.name} ID# ${props.bird.id}`}
+            src={bird.img}
+            alt={`${bird.name} ID# ${bird.id}`}
             width="125px"
             height="125px"
             />
-            <br/>
-            <button>Adopt</button>
+            <button onClick={() => adoptBird(bird.id)}>Adopt</button>
 
 
         </div>
