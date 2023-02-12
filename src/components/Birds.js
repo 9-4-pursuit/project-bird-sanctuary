@@ -9,6 +9,7 @@ export default function Birds(props) {
     const setCart= props.setCart;
 
 
+
     return(<div className="birds">
         {/* iterate through each bird and display the card */}
         {birdData.map((bird) => {

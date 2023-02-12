@@ -1,6 +1,7 @@
 
 import bonusItems from "../data/bonusItems";
 import { useState } from "react";
+import { useEffect } from "react";
 
 
 
@@ -9,22 +10,40 @@ export default function Cart(props) {
     //assign the props to a variable
     const cart = props.cart;
     const setCart = props.setCart;
-    const total = props.total;
-    const setTotal = props.total;
-    const discount = props.discount;
-    const setDiscount = props.setDiscount;
 
     //create a state for result, discount, and bonus items
     const [total, setTotal] = useState(0);
     const [discount, setDiscount] = useState(0);
     const [bonus, setBonus] = useState([])
 
-    //function to update the cart 
+    //after the cart updates, calculate
+    useEffect(()=>{calculate()}, [cart])
 
-    
-    
+    //calculate the total and discount
+    function calculate(){
+        //add the totals together and assign to a variable
+        const sum = cart.reduce((acc, current)=> {
+            return acc + current.amount;
+        },0);
+        //check for discount
+        if (cart.length >= 3){
+            setDiscount(10);
+
+        } 
+        //set the new total
+        setTotal(sum);
+
+    }
+
+
+
 
     //function to map through the bonus items
+
+
+
+
+    
     
 
     return(<div className="Cart">
