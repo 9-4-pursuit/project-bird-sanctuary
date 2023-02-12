@@ -1,11 +1,11 @@
 
 
-function Cart({ cartItem, defaultStatus, bonusItem }) {
+function Cart({ cartItem, defaultStatus, bonusItem, total }) {
     return (
         <div className="Cart">
             <h3>Cart</h3>
             <h4>Discount: %</h4>
-            <h4>Total: $</h4>
+            <h4>Total: ${total}</h4>
             <ol>
                 {
                     cartItem.map((item) => {
