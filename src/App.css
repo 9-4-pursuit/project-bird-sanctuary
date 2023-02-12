@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-direction: column;
+
+}
+.card {
+    display: grid;
+    grid-template-columns: auto;
+    flex-wrap: wrap;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 50px;
+    }
+li {
+    background-color: burlywood;
+    list-style: none;
+    width: 100%;
+    border: 5px dashed bisque;
+    justify-content: center;
+    text-align: center;
+}
+
+.img {
+max-width: 100px;
+text-decoration: underline 25px;
+text-align: center;
+justify-content: center
+
+}
+
+button {
+    background-color: aquamarine;
+    justify-content: center;
+}
