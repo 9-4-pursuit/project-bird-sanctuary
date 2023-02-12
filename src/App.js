@@ -4,12 +4,13 @@ import BirdCards from "./components/BirdCards";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import './App.css'
+import bonusItems from "./data/bonusItems"
 
 
 
 function App () {
   return (
-    <div>
+    <div className="app">
         <Cart />
         <BirdCards birdData={birdData}/>
         <Checkout />

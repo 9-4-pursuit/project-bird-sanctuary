@@ -1,4 +1,9 @@
 
+.app {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 .card {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -31,7 +36,18 @@ li  {
     width: 100%; */
 } 
 
+li p{
+    font-size: large;
+}
 
+form {
+    border: 3px solid red;
+}
+
+.cart {
+    border: 3px solid red;
+    margin-bottom: 20%;
+}
 
 
 /* body {

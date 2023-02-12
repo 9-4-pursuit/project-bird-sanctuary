@@ -4,12 +4,9 @@ function BirdCards (props) {
     console.log(data)
   
     return (
-
         <div className="card">
-            
             {data.map((bird) => {
           return (
-           
             <div key={bird.id} className="birds">
               <li>
                 <p>{bird.name}</p>
@@ -18,10 +15,8 @@ function BirdCards (props) {
               <button>Adopt Me</button>
               </li>
               </div>
-            
           );
         })}
-           
         </div>
 )
 }
