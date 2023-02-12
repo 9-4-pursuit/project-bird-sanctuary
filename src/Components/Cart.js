@@ -1,6 +1,6 @@
 
 
-function Cart({ cartItem, defaultStatus }) {
+function Cart({ cartItem, defaultStatus, bonusItem }) {
     return (
         <div className="Cart">
             <h3>Cart</h3>
@@ -17,11 +17,13 @@ function Cart({ cartItem, defaultStatus }) {
                     })
                 }
             </ol>
-            <p style={defaultStatus ? { display: "none" } : { display: "block" }}>
-                Your donations have qualified you for the following Items:
-            </p>
+            <div style={defaultStatus ? { display: "none" } : { display: "block" }}>
+                    <h6>Your donations have qualified you for the following Items:</h6>
+                <ul>
+                    <li>{bonusItem}</li>
+                </ul>
+            </div>
             
-
         </div>
     )
 }

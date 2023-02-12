@@ -9,21 +9,30 @@ function App() {
   const [cartItem, setCartItem] = useState([])
   const [birds, setBirds] = useState(birdData)
   const [defaultStatus, toggleStatus] = useState(true)
-  const [bonus, setBonus] = useState([])
+  const [bonus, setBonus] = useState(bonusItems)
+  const [bonusIndex, setBonusIndex] = useState(0)
+  const [bonusItem, setBonusItem] = useState([])
   
-
   // let cartItems = []
   // let itemName;
 
 function addingToCart(birdID){
 
+  
   const birdArr = [...birds]
   const bonusArr = [...bonus]
+
+ 
+    setBonusIndex(bonusIndex + 1)
+
+  
   
   const index = birdArr.findIndex((bird)=> birdID === bird.id)
   setCartItem([birdArr[index], ...cartItem])
 
- console.log(cartItem)
+setBonusItem([...bonusItem ,bonusArr[bonusIndex]])
+
+ console.log(bonusArr)
 toggleStatus(false)
 }
 
@@ -32,7 +41,7 @@ toggleStatus(false)
   return (
     <div className="app">
       <aside>
-      <Cart cartItem={cartItem} defaultStatus={defaultStatus}/>
+      <Cart cartItem={cartItem} defaultStatus={defaultStatus} bonusItem={bonusItem}/>
 
       </aside>
       <main>
