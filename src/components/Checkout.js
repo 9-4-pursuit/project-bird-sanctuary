@@ -1,6 +1,7 @@
 
 function Checkout () {
     return (
+      <>
       <div >
     <form className="form">
         <label htmlFor="firstname">First Name</label>
@@ -11,9 +12,11 @@ function Checkout () {
         <input type="email"/>
         <label htmlFor="zipcode">Zip Code</label>
         <input type="number"/>
+        <br></br>
         <button type="submit">Submit</button>
     </form>
       </div>
+      </>
     );
   };
   

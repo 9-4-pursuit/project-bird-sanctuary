@@ -1,35 +1,48 @@
 .app {
     display: grid;
-    grid-template-columns: auto auto
+    grid-template-columns: "purchase cards";
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 1%;
+}
+/* body {
+    background-color: black;
+    display: grid;
+    grid-template-columns: "purchase cards";
+} */
 
+.purchase {
+    display: grid;
+    grid-area: "purchase";
+    border: 10px dotted bisque;
+    text-align: center;
 }
 
-.cart {
+/* .cart {
+    border: 20px solid bisque;
+    text-align: center;
+    max-height: 50%
+} */
+
+.card {
     display: grid;
-    border: 5px dashed bisque;
+    grid-area: "cards";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
     justify-content: center;
     text-align: center;
-    
-}
-.form {
+    }
+
+/* .form {
     display: grid;
     border: 5px dashed bisque;
     justify-content: center;
     text-align: center
-}
+} */
 
-.card {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
-    grid-gap: 30px;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 50px;
-    }
 
-li {
+.cards {
     background-color: rgb(94, 178, 187);
     list-style: none;
     width: 100%;
@@ -40,12 +53,9 @@ li {
 }
 
 .img {
-max-width: 150px;
-text-decoration: underline 25px;
-text-align: center;
-justify-content: center
-
-}
+    width: 50%;
+    height: 100%
+    }
 
 button {
     background-color: aquamarine;

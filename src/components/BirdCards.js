@@ -1,15 +1,18 @@
+import birdData from "../data/birds";
+
+
 function BirdCards(props) {
   const data = props.birdData;
-  const { name, amount, img } = data;
+  // const { name, amount, img } = data;
   console.log(data);
   return (
     <div className="card">
       
         {data.map((bird) => {
           return (
-            
+            <>
               <div key={bird.div} className="birds">
-                <li key={bird.id}>
+                <li className="cards" key={bird.id}>
                   <h4>
                     <strong>{bird.name}</strong>
                   </h4>
@@ -19,7 +22,7 @@ function BirdCards(props) {
                   <button>Adopt Me</button>
                 </li>
               </div>
-            
+              </>
           );
         })}
       
