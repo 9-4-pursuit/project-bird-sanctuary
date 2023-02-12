@@ -1,0 +1,38 @@
+
+.card {
+    border: solid 1px black;
+    width: 250px;
+    text-align: center;
+}
+
+.birds {
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    grid-area: birds;
+    margin: 10px;
+}
+
+.Cart {
+    border: solid 1px black;
+    grid-area: cart;
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+}
+
+.Checkout {
+    border: solid 1px black;
+    grid-area: checkout;
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-areas: "cart birds"
+    "checkout birds"
+    ". birds";
+}
