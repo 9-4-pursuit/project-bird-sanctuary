@@ -22,7 +22,7 @@ function App () {
 
             <Cart cart={cart} setCart={setCart} />
 
-            <Checkout />
+            <Checkout setCart={setCart}/>
         </main>
     );
 };

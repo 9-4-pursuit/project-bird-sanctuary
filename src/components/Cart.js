@@ -1,7 +1,6 @@
 
 import bonusItems from "../data/bonusItems";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
 
@@ -39,7 +38,17 @@ export default function Cart(props) {
 
     }
 
+    //function to remove bird from cart
+    function removeBird(i) {
 
+        //iterate through cart and filter
+        let newCart = cart.filter((bird, index) => {
+            return index !== i;
+        })
+
+        //set the cart with the bird removed
+        setCart(newCart);
+    }
 
 
     //function to map through the bonus items
@@ -77,7 +86,10 @@ export default function Cart(props) {
             {/* iterate through cart */}
             {cart.map((bird, index) => {
                 
-                return (<li key={index}>{bird.name}: ${bird.amount}</li>)
+                return (<li key={index}>
+                    {bird.name}: ${bird.amount}
+                    <button onClick={() => removeBird(index)}>remove</button>
+                </li>)
             })}
         </ol>
         

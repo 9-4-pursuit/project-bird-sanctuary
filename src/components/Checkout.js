@@ -1,9 +1,25 @@
 
-export default function Checkout() {
+export default function Checkout(props) {
+
+    //get the set cart function
+    const setCart = props.setCart;
+
+    //function for form submit
+    function checkoutSubmit(event){
+        event.preventDefault();
+
+        alert("You have adopted birds. Thank you!");
+
+        //empty the cart
+        setCart([])
+
+    }
+
+
     return(<div className="Checkout">
         <h2>Checkout</h2>
         {/* form for checking out */}
-        <form>
+        <form onSubmit={checkoutSubmit}>
             <label htmlFor="firstname">First Name</label>
             <input id="firstname" name="firstname" type="text" ></input>
 
