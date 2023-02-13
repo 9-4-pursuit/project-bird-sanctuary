@@ -8,13 +8,14 @@ export default function BirdCard(props) {
 
     //create a function that adds the bird to the cart
     function adoptBird(){
-        //check if the bird is in your cart
-        if (!cart.includes(bird)){
+        //DONT NEED TO CHECK IF BIRD IS ALREADY THERE, it breaks tests
+        ////check if the bird is in your cart
+        //if (!cart.includes(bird)){
             setCart([ ...cart,bird]);
             
-        } else {
-            alert("Bird is already in cart")
-        }
+        // } else {
+        //     alert("Bird is already in cart")
+        // }
         
     }
 

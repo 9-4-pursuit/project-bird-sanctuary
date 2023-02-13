@@ -16,8 +16,10 @@ export default function Cart(props) {
     const [discount, setDiscount] = useState(0);
     const [bonus, setBonus] = useState([])
 
-    //after the cart updates, calculate
-    useEffect(()=>{calculate()}, [cart])
+    //after the cart or total updates, calculate
+    useEffect(()=>{
+        calculate();
+    }, [cart])
 
     //calculate the total and discount
     function calculate(){
@@ -32,6 +34,8 @@ export default function Cart(props) {
         } 
         //set the new total
         setTotal(sum);
+        //calculate the bonus items
+        bonusEarned(sum)
 
     }
 
@@ -39,12 +43,30 @@ export default function Cart(props) {
 
 
     //function to map through the bonus items
+    function bonusEarned(totalPrice){
+        //create array for the specific bonus items
+        let bonuses = [];
 
+        //check if the total meets the requirements
+        if (totalPrice > 1000){
+            bonuses = [...bonusItems];
+            setBonus(bonuses);
+        } else if (totalPrice >= 500) {
+            bonuses = bonusItems.slice(0,3);
 
+            setBonus(bonuses);
+        } else if (totalPrice >= 300) {
+            bonuses = bonusItems.slice(0,2);
 
+            setBonus(bonuses);
+        } else if (totalPrice >= 100) {
+            bonuses = bonusItems.slice(0,1);
 
-
-    
+            setBonus(bonuses);
+        } else {
+            setBonus([])
+        }
+    }
 
     return(<div className="Cart">
         <h2>Cart</h2>
@@ -53,15 +75,17 @@ export default function Cart(props) {
         
         <ol className="cart-birds" >
             {/* iterate through cart */}
-            {cart.map((bird) => {
+            {cart.map((bird, index) => {
                 
-                return (<li key={"cart"+bird.id}>{bird.name}: ${bird.amount}</li>)
+                return (<li key={index}>{bird.name}: ${bird.amount}</li>)
             })}
         </ol>
         
         <p>Your donation has qualified you for the following items:</p>
         <ul className="bonus">
-            
+            {bonus.map((item, index)=>{
+                return (<li key={index}>{item}</li>);
+            })}
         </ul>
         
     </div>)
