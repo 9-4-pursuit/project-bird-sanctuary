@@ -16,7 +16,6 @@ function App() {
   function handleAddToCart(e) {
     setAddToCart(addToCart ? [e, ...addToCart] : [e])
     setTotal(() => total + e.amount)
-
   }
 
   function bonusItemHandler(item) {
@@ -59,8 +58,7 @@ function App() {
             bird={bird}
             handleAddToCart={(e) => handleAddToCart(e)}
             index={index}
-          />
-        )
+          />)
       })
       }
 

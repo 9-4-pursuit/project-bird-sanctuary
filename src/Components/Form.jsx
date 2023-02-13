@@ -1,8 +1,4 @@
-
-
 function Form({ resetAll }) {
-
-
 
     return (
 
