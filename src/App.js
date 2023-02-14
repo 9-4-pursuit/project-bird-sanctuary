@@ -1,28 +1,27 @@
 import Birds from "./components/Birds";
 import Checkout from "./components/Checkout";
 import Cart from "./components/Cart";
-
-import birdData from "./data/birds";
-
-import "./App.css"
+import "./App.css";
 import { useState } from "react";
 
-
-
-function App () {
+function App() {
 
     //create a state for the cart
     const [cart, setCart] = useState([]);
-    
 
     return (
         <main>
-            {/* send the carts, total, and discount state and set state function down as props to birds and cart */}
-            <Birds birdData={birdData} cart={cart} setCart={setCart} />
+            {/* send the carts state and set state function down as props */}
+            <Birds
+                cart={cart}
+                setCart={setCart} />
 
-            <Cart cart={cart} setCart={setCart} />
+            <Cart
+                cart={cart}
+                setCart={setCart} />
 
-            <Checkout setCart={setCart}/>
+            <Checkout
+                setCart={setCart} />
         </main>
     );
 };
