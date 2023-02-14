@@ -1,6 +1,9 @@
 
+// The cart receives the data from the parent component through props. The component is responsible 
+// for rendering the birds that are in the cart, the total cost, the discount, and the bonus items.
 
-function Cart (bonusItems) {
+
+function Cart ({adoptBird, cartTotal}) {
     return (
         <div className="cart">
             <h1><center>Cart</center></h1>

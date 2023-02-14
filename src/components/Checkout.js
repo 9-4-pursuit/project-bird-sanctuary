@@ -10,7 +10,7 @@ function Checkout () {
                 <label htmlFor="email">Email</label>
                 <input type="email"></input>  
                 <label htmlFor="zipcode">Zip Code</label>
-                <input type="text"></input>          
+                <input type="number"></input>          
                 <button type="submit">Submit</button>
             </form>
         </div>
