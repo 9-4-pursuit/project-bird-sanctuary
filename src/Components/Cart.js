@@ -40,10 +40,11 @@ export default function Cart({ cartContent, cartTotal, deleteBird }) {
                             return (
                                 <li key={item.id}>
                                     {item.name} ${item.amount}.00
+                                    <br />
                                     <button
-                                        onClick={() => {
+                                        onClick={(event) => {
                                             setBonuses([]);
-                                            deleteBird(item)
+                                            deleteBird(item, event)
                                         }}
                                     >Delete</button>
                                 </li>

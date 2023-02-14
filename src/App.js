@@ -21,11 +21,12 @@ function App() {
     // }
   }
 
-  function deleteBird(birdObj) {
-    const filteredCart = cartContent.filter((item) => item.id !== birdObj.id);
-    setCartContent(filteredCart);
+  function deleteBird(birdObj, event) {
+    event.target.parentNode.remove()
+    // const filteredCart = cartContent.filter((item) => item.id !== birdObj.id);
+    // setCartContent(filteredCart);
     setCartTotal(cartTotal - birdObj.amount);
-    console.log(filteredCart, cartContent)
+    console.log(cartContent)
   }
 
   return (
