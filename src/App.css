@@ -43,6 +43,7 @@ li p{
 }
 
 .cart {
+    text-align: center;
     border: 3px solid red;
     margin-bottom: 20%;
 }
