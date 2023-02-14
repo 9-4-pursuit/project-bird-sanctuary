@@ -29,7 +29,6 @@ const birdData = [
     amount: 400,
     id: 888,
   },
-
   {
     img: "https://i.imgur.com/YHApS55.png",
     name: "King Vulture",
@@ -42,7 +41,6 @@ const birdData = [
     amount: 600,
     id: 1212,
   },
-
   {
     img: "https://i.imgur.com/VGAxKX1.png",
     name: "tweetr",
