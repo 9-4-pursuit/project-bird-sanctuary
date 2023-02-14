@@ -1,6 +1,7 @@
 
 
 function Card({addingToCart, birdData}){
+    
     let bird = birdData
     return(
         <div className="card">

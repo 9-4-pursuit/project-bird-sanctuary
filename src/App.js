@@ -1,67 +1,82 @@
 import Card from "./Components/Card";
 import birdData from "./data/birds"
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 import { useState } from "react";
 import bonusItems from "./data/bonusItems";
 
+
 function App() {
 
-  const [cartItem, setCartItem] = useState([])
+  const [cartItems, setCartItems] = useState([])
   const [defaultStatus, toggleStatus] = useState(true)
   const [bonusIndex, setBonusIndex] = useState(0)
   const [bonusItem, setBonusItem] = useState([])
-  const [total, setTotal]= useState(0)
-  const [totalArr, setTotalArr] = useState([])
+  // const [total, setTotal] = useState(0)
+  // const [totalArr, setTotalArr] = useState([])
   const [discount, setDiscount] = useState(0)
-  
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: ""
+  })
+
   // let cartItems = []
   // let itemName;
 
-// let totalArr = []
+  // let totalArr = []
 
-function addingToCart(birdID){
+  // function handleTextChange(event) { 
+  //   setForm(event.target.value)
+  // }
 
   const birdArr = [...birdData]
-  const bonusArr = [...bonusItems]
+  function addingToCart(birdID) {
+
+    const bonusArr = [...bonusItems]
 
     setBonusIndex(bonusIndex + 1)
 
-  const index = birdArr.findIndex((bird)=> birdID === bird.id)
-  setCartItem([birdArr[index], ...cartItem])
+    const index = birdArr.findIndex((bird) => birdID === bird.id)
+    setCartItems([birdArr[index], ...cartItems])
+    // cartItems.push(birdArr[index])
+    // setCartItem(birdArr[index])
 
-setBonusItem([...bonusItem, bonusArr[bonusIndex]])
+    setBonusItem([...bonusItem, bonusArr[bonusIndex]])
+    // settingTotal()
+    
+    if (cartItems.length >= 3) {
+      setDiscount(10)
+    } else {
+      setDiscount(0)
+    }
+    // console.log(cartItems)
+    
+    toggleStatus(false)
+  }
 
-setTotalArr([birdArr[index].amount, ...totalArr])
-
-// let newTotArr = ([birdArr[index].amount, ...totalArr])
-setTotal(100)
-
-const sum = totalArr.reduce(
-  (acc, curr) => parseInt(acc) + parseInt(curr),
-  (0)
-);
-setTotal(sum)
-
-if (cartItem.length >= 3){
-  setDiscount(10)
-} else {
-  setDiscount(0)
-}
-
- console.log(cartItem)
-toggleStatus(false)
-}
+  function submitForm() {
+    alert('You have adopted birds. Thank you!')
+  }
 
 
 
   return (
     <div className="app">
       <aside>
-      <Cart cartItem={cartItem} defaultStatus={defaultStatus} bonusItem={bonusItem} total={total} discount={discount}/>
-
+        <Cart 
+        cartItems={cartItems} 
+        defaultStatus={defaultStatus} 
+        bonusItem={bonusItem} 
+        // total={total} 
+        discount={discount}
+        // settingTotal={settingTotal}
+        />
+        <Checkout submitForm={submitForm} form={form} setForm={setForm} />
       </aside>
       <main>
-      <Card birdData={birdData} addingToCart={addingToCart}/>
+        <Card birdData={birdData} addingToCart={addingToCart} />
 
       </main>
     </div>
