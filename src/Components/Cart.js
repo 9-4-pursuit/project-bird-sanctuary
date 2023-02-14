@@ -35,7 +35,7 @@ function Cart () {
               <input name="example"/>
             </label>
           </fieldset>
-          <button type="submit">Submitt button</button>
+          <button type="submit">Submit button</button>
           </form>
         <form>
           <fieldset>

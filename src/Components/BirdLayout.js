@@ -1,3 +1,4 @@
+import React from "react";
 import BirdCard from "./BirdCard";
 
 
@@ -12,12 +13,7 @@ function BirdLayout(props) {
                 return <BirdCard birdy = {birdy} />
             })
             }
-            <BirdCard />
 
-            {/* <h1>{name.first} {name.last}</h1>
-            <p>Home: {phone}</p>
-            <p>Mobile: {cell}</p>
-            <img alt="profile pic" src={picture.thumbnail}/> */}
 
         </div>
     )
