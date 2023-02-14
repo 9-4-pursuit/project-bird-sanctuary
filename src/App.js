@@ -1,14 +1,10 @@
-// import birdData from "./data/birds";
-// import bonusItems from "./data/bonusItems";
-import About from "./components/About";
-
-import Footer from "./components/Footer";
-
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import ContactForm from "./components/ContactForm";
-import "./index.css";
+import Hero from "./components/Hero";
+import About from "./components/About";
 import BirdGallery from "./components/BirdGallery";
+import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
+import "./index.css";
 
 function App() {
   return (

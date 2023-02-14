@@ -2,11 +2,14 @@ import Cart from "./Cart";
 import CartForm from "./CartForm";
 import Title from "./Title";
 
+import { useState, useEffect } from "react";
+
 const Order = ({ birds, setBirds }) => {
-  let totalPrice = birds.reduce((accu, { amount }) => accu + amount, 0);
-  if (birds.length >= 3) {
-    totalPrice -= totalPrice * 0.1;
-  }
+  const [totalPrice, setTotalPrice] = useState();
+
+  useEffect(() => {
+    setTotalPrice(birds.reduce((accu, { amount }) => accu + Number(amount), 0));
+  }, [birds]);
 
   function removeItem(id) {
     setBirds(birds.filter((item) => item.id !== id));
