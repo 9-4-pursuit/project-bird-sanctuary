@@ -4,17 +4,34 @@ body {
 
 .app {
     border: 2px solid black;
+    width: 95%;
+    display: grid;
+    grid-template-areas: 
+        "title  title"
+        "cart   cards"
+        "check  cards";
+    grid-template-columns: 1fr 2fr;
 }
 
+h1 {
+    grid-area: title;
+}
 .card {
+    grid-area: cards;
     border: 2px solid blue;
 }
 
 .cart {
+    grid-area: cart;
     border: 2px solid green;
 }
 
+.top {
+    height: auto;
+}
+
 .checkout {
+    grid-area: check;
     border: 2px solid red;
 }
 
