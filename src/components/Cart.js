@@ -18,7 +18,7 @@ export default function Cart(props) {
     //after the cart updates, calculate
     useEffect(()=>{
         calculate();
-    })
+    }, [cart])
 
     //calculate the total and discount
     function calculate(){

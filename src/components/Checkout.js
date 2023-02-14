@@ -13,13 +13,18 @@ export default function Checkout(props) {
         //empty the cart
         setCart([])
 
+        //clear the fields
+        event.target.firstname.value = "";
+        event.target.lastname.value = "";
+        event.target.email.value = "";
+        event.target.zip.value = "";
     }
 
 
     return(<div className="Checkout">
         <h2>Checkout</h2>
         {/* form for checking out */}
-        <form onSubmit={checkoutSubmit}>
+        <form onSubmit={(event) => checkoutSubmit(event)}>
             <label htmlFor="firstname">First Name</label>
             <input id="firstname" name="firstname" type="text" ></input>
 
