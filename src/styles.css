@@ -1,0 +1,13 @@
+img {
+    width: 200px;
+}
+
+.card {
+    border: 1px solid black;
+    width: 300px;
+}
+
+.birds {
+    display: grid;
+    columns: 1fr 1fr 1fr;
+}
