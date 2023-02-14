@@ -1,7 +1,14 @@
+import Birds from "./Components/Birds";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+
+
 function App () {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <Birds />
+      <Cart />
+      <Checkout />
     </div>
   );
 };
