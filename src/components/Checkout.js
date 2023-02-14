@@ -8,16 +8,22 @@ export default function Checkout(props) {
     function checkoutSubmit(event){
         event.preventDefault();
 
-        alert("You have adopted birds. Thank you!");
+        //check if every input was filled 
+        if (event.target.firstname.value && event.target.lastname.value && event.target.email.value && event.target.zip.value){
+            alert("You have adopted birds. Thank you!");
 
-        //empty the cart
-        setCart([])
+            //empty the cart
+            setCart([])
 
-        //clear the fields
-        event.target.firstname.value = "";
-        event.target.lastname.value = "";
-        event.target.email.value = "";
-        event.target.zip.value = "";
+            //clear the fields
+            event.target.firstname.value = "";
+            event.target.lastname.value = "";
+            event.target.email.value = "";
+            event.target.zip.value = "";
+        } else {
+            alert("Please enter a value into every box.");
+        }
+        
     }
 
 
