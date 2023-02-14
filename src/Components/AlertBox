@@ -6,6 +6,16 @@ import styles from ".index.module.css"
 
 class AlertBox extends Component{
     //other code to go here
+
+
+
+
+      {/* <Alert type="success">
+        <p>You have adopted birds. Thank you!</p>
+        <p>currently, this is the only element in the app except for H1. Will try adding BirdCard</p> 
+      </Alert> */}
+
+
 }
 
 export default AlertBox;

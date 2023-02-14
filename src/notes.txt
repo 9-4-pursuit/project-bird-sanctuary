@@ -1,0 +1,143 @@
+
+// function BirdCard (props) {
+
+//     // const [birds, setBirds] = useState(birdData)
+//     const { name, amount, img } = props.bird
+
+
+//         //make copy of the birds array using destructuring
+//         //add Royal Flycatcher
+//       // const newBirdCard="newBirdCard string for now"
+//       //   setBirds([newBirdCard, ...birds])
+    
+
+
+
+//     return (
+//       <div>
+//         <h1>Hello, BirdCard!</h1>
+//         <h2>bird name</h2> 
+//         <p>price of bird</p>
+//         <p>image of bird</p>
+//         {/* <h2>{props.birdData.name}</h2> */}
+//         <p>$amountTBD</p> 
+//         {/* <image src="https://i.imgur.com/GacKN4tb.jpg" /> */}
+//         {/* <p>{props.birdData.image}</p>
+//         <p>{props.birdData.img}</p> */}
+
+
+//       </div>
+//     );
+//   };
+  
+// export default BirdCard;
+
+// //   The bird data comes from src/data/birds.js
+// // Each bird card displays the name, image, and amount (price)
+// // Each bird card has a class name of card
+// // Each bird card has an Adopt button
+// // The button text should be: Adopt
+
+
+//     // function addBird() {
+//     //     console.log("Add bird to card")
+//     //     //create a new bird 
+//     //     //adding a basic object of sorts
+//     //     const newBirdCard = {
+//     //         img: "https://i.imgur.com/GacKN4tb.jpg",
+//     //         name: "Royal Flycatcher",
+//     //         amount: 300,
+//     //         id: 777,
+//     //     };
+
+
+//   //   function removeBird(birdID) {
+//   //     console.log("remove bird number ", birdID);
+//   //     //use a filter method to remove any dogs that have a matching ID
+//   //     const filterBirdArray = birds.filter((bird) => bird.id !== birdID)
+//   //         //this will filter out all birds that do NOT have the id I want to get rid of 
+//   //         //set the birds array to the new array that does not include the bird I want to get rid of
+//   //     setBirds(filterBirdArray);
+//   // }
+
+
+
+
+Got rid of this in BirdLayout
+
+        <BirdCard />
+            {/* <BirdCard />
+            <BirdCard />
+            <BirdCard />
+            <BirdCard />
+            <BirdCard />  
+            <BirdCard /> */}
+      </div>
+
+
+
+
+I am having some weird problems with CSS. I will move all the code here for now.
+
+style.module.CSS
+/* The alert message box */
+
+.alert {
+    position:relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.primary {
+    color: #084298;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+}
+
+.secondary {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d3d6d8;
+}
+
+.info {
+    color: #055160;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color:black;
+}
+
+.hide {
+    display:none;
+}
+
+=======================================
