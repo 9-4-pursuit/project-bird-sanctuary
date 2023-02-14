@@ -18,13 +18,7 @@ const Order = ({ birds, setBirds }) => {
   return (
     <section className="section">
       <Title title="your" subTitle="order" />
-      <div
-        style={{
-          display: "flex",
-          textAlign: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="order-section">
         <div className="section">
           <Cart birds={birds} removeItem={removeItem} totalPrice={totalPrice} />
 

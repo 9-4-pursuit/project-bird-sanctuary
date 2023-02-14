@@ -6,7 +6,7 @@ const Cart = ({ birds, totalPrice, removeItem }) => {
       <h2>Cart</h2>
       <h4>Discount: {birds.length < 3 ? 0 : 10}%</h4>
       <h5>
-        Total:{" "}
+        Total: ${" "}
         {birds.length < 3 ? totalPrice : (totalPrice -= totalPrice * 0.1)}
       </h5>
       {birds.map(({ id, name, amount }) => {
