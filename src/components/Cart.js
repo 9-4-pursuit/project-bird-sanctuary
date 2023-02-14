@@ -15,10 +15,10 @@ export default function Cart(props) {
     const [discount, setDiscount] = useState(0);
     const [bonus, setBonus] = useState([])
 
-    //after the cart or total updates, calculate
+    //after the cart updates, calculate
     useEffect(()=>{
         calculate();
-    }, [cart])
+    })
 
     //calculate the total and discount
     function calculate(){
@@ -34,7 +34,7 @@ export default function Cart(props) {
         //set the new total
         setTotal(sum);
         //calculate the bonus items
-        bonusEarned(sum)
+        bonusEarned(sum);
 
     }
 
@@ -44,7 +44,7 @@ export default function Cart(props) {
         //iterate through cart and filter
         let newCart = cart.filter((bird, index) => {
             return index !== i;
-        })
+        });
 
         //set the cart with the bird removed
         setCart(newCart);
@@ -73,14 +73,14 @@ export default function Cart(props) {
 
             setBonus(bonuses);
         } else {
-            setBonus([])
+            setBonus([]);
         }
     }
 
     return(<div className="Cart">
         <h2>Cart</h2>
-        <h4>Discount: {discount}%</h4>
-        <h4>Total: ${total}</h4>
+        <h3>Discount: {discount}%</h3>
+        <h4>Total: ${total}</h4> 
         
         <ol className="cart-birds" >
             {/* iterate through cart */}
