@@ -16,14 +16,26 @@ body {
 h1 {
     grid-area: title;
 }
+
+.birdcards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 5px;
+}
 .card {
     grid-area: cards;
     border: 2px solid blue;
+    width: 180px;
+    height: 290px;
+    margin: 5px;
+    
 }
 
 .Cart {
     grid-area: cart;
     border: 2px solid green;
+    margin-left: 10px;
 }
 
 .top {

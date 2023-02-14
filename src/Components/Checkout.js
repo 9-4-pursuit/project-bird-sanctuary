@@ -1,3 +1,6 @@
+// Our Checkout components handles the form
+// Here we have a function to handle the ON SUBMIT alert
+// Not much else is happening here in this project
 
 export default function Checkout({ cartContent, cartTotal }) {
 
