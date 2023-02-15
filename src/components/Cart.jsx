@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { Birds } from "../Context";
 import Bonus from "./Bonus";
 
-const Cart = ({ birds, totalPrice, removeItem }) => {
+const Cart = ({ totalPrice, removeItem }) => {
+  const { birds } = useContext(Birds);
+
+  // console.log(useContext(Birds));
   return (
     <>
       <h2>Cart</h2>

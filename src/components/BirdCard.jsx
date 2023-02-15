@@ -1,4 +1,18 @@
-const BirdCard = ({ bird, birdClickHandler }) => {
+import { useContext } from "react";
+import { Birds } from "../Context";
+
+const BirdCard = ({ bird }) => {
+  const { birds, setBirds } = useContext(Birds);
+
+  const birdClickHandler = (item) => {
+    const birdExist = birds.find((el) => el.id === item.id);
+    if (birdExist) {
+      return alert("You have already added this bird to the cart");
+    } else {
+      setBirds([...birds, { ...item, name: item.name, amount: item.amount }]);
+    }
+  };
+
   const { img, name, amount } = bird;
   return (
     <>

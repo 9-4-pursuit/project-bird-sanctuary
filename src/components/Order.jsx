@@ -1,10 +1,12 @@
+import { useContext, useState, useEffect } from "react";
 import Cart from "./Cart";
 import CartForm from "./CartForm";
 import Title from "./Title";
+import { Birds } from "../Context";
 
-import { useState, useEffect } from "react";
+const Order = () => {
+  const { birds, setBirds } = useContext(Birds);
 
-const Order = ({ birds, setBirds }) => {
   const [totalPrice, setTotalPrice] = useState();
 
   useEffect(() => {
@@ -20,9 +22,8 @@ const Order = ({ birds, setBirds }) => {
       <Title title="your" subTitle="order" />
       <div className="order-section">
         <div className="section">
-          <Cart birds={birds} removeItem={removeItem} totalPrice={totalPrice} />
-
-          <CartForm birds={birds} setBirds={setBirds} />
+          <Cart removeItem={removeItem} totalPrice={totalPrice} />
+          <CartForm />
         </div>
       </div>
     </section>

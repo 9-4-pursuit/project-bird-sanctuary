@@ -1,7 +1,11 @@
-const CartForm = ({ birds, setBirds }) => {
+import { useContext } from "react";
+import { Birds } from "../Context";
+
+const CartForm = () => {
+  const { birds, setBirds } = useContext(Birds);
+
   function handleSubmit(e) {
     e.preventDefault();
-
     birds.length < 1
       ? alert("Please select your favorite bird.")
       : alert("You have adopted birds. Thank you!");
