@@ -13,14 +13,6 @@ function Cart ({ total, updateBird, deleteBird }) {
             setBonusItem(() => [...bonusItem, bonusItems[2]]);
         } else if(total > 1000 && !bonusItem.includes(bonusItems[3])) {
             setBonusItem(() => [...bonusItem, bonusItems[3]]);
-        }        
-
-        if(bonusItem) {
-            return(
-                <>
-                    {bonusItem.map((bonus, index) => <li key={index}>{bonus}</li>)}
-                </>
-            )
         }
     }
 
@@ -53,6 +45,7 @@ function Cart ({ total, updateBird, deleteBird }) {
             <p>Your donations has qualified you for the following items:</p>
             <ul>
                 {addBonus()}
+                {bonusItem.map((bonus, index) => <li key={index}>{bonus}</li>)}
             </ul>
         </div>
       </div>

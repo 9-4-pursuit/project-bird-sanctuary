@@ -6,8 +6,8 @@ function BirdCards ({ updateBird, setUpdateBird, totalAmount }) {
         {birdData.map(bird => {
             return (
                 <div className="card" key={bird.id}>
-                    <p>{bird.name}</p>
-                    <p>Price: ${bird.amount}</p>
+                    <h4>{bird.name}</h4>
+                    <p><strong>Price: ${bird.amount}</strong></p>
                     <img src={bird.img} alt={bird.name} />
                     <button className="adopt"
                         onClick={() => {

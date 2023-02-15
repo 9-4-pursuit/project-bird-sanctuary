@@ -1,5 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 
+.App{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    margin: 30px;
+    grid-template-columns: 2fr 4fr;
+    max-width: fit-content;
+    background-color: cornsilk;
+}
+
+.Cart{
+    display: grid;
+    grid-area: "cart";
+    border: 3px solid lightgray;
+    padding: 20px 10px;
+    margin: 20px;
+    background-color: honeydew;
+    box-shadow: 2px 5px 10px gray;
+}
+
+.Checkout{
+    display: grid;
+    grid-area: "checkout";
+    border: 3px solid lightgray;
+    width: auto;
+    grid-column-start: 1;
+    padding: 40px;
+    margin: auto;
+    background-color: antiquewhite;
+    box-shadow: 2px 5px 10px gray;
+
+}
+
+.birds{
+    display: grid;
+    grid-area: "birds";
+    grid-gap: 20px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card{
+    display: grid;
+    grid-area: "card";
+    border: 1px;
+    padding: 10px 50px 0px;
+    box-shadow: 2px 5px 10px gray;
+    background-color: aliceblue;
+}
 
 img{
-    width: 300px;
+    width: 250px;
+    height: 250px;
+    border: 1em;
 }

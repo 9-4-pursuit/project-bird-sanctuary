@@ -22,7 +22,7 @@ function App () {
   }
 
   return (
-    <div>
+    <div className="App">
       <Cart
         total={total}
         updateBird={updateBird}
