@@ -12,6 +12,7 @@ import './App.css'
 
 
 function App () {
+  // const [selectedBirds, setSelectedBirds] = useState([]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
@@ -19,8 +20,21 @@ function App () {
 
 
   const addToCart = (bird) => {
-
-  }
+    setCart([...cart, bird]);
+    setTotal(total + bird.amount);
+    setDiscount(cart.length >= 3 ? 10 : 0);
+    setBonus(
+      total >= 1000 
+      ? bonusItems
+      : total >= 500
+      ? bonusItems.slice(0, 3)
+      : total >= 300
+      ? bonusItems.slice(0, 2) 
+      : total >= 100
+      ? bonusItems.slice(0, 1) 
+      : []
+    )
+  };
 
 
 
@@ -31,9 +45,9 @@ function App () {
         cart={cart} 
         total={total}
         discount={discount}
-        bonusItems={bonusItems}
+        bonus={bonus}
         />
-        <BirdCards birds={birdData}/>
+        <BirdCards birds={birdData} addToCart={addToCart}/>
         <Checkout />
     </div>
   );

@@ -5,7 +5,7 @@
 const BirdCards = ({ birds, addToCart }) => {
 
   return (
-      <div className="card">
+      <div className="birds">
           {birds.map((bird) => 
           <div key={bird.name} className="card">
             <li>
