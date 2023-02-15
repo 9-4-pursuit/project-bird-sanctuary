@@ -11,7 +11,9 @@ export default function Birds(props) {
         {/* iterate through each bird and display the card */}
         {birdData.map((bird) => {
             //create the bird card with necessary information
-            return (<div className="card">
+            return (<div 
+            className="card"
+            key={bird.id}>
             <h5>{bird.name}</h5>
             <p>Price: ${bird.amount}</p>
             <img

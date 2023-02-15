@@ -14,25 +14,23 @@ export default function Cart(props) {
 
     //after the cart updates, calculate
     useEffect(() => {
-        calculate();
+        const calculate = () => {
+            //add the totals together and assign to a variable
+            let sum = cart.reduce((acc, current) => {
+                return acc + current.amount;
+            }, 0);
+            //check for discount
+            if (cart.length >= 3) {
+                setDiscount(10);
+                sum *= .9;
+            }
+            //set the new total
+            setTotal(sum);
+            //calculate the bonus items
+            bonusEarned(sum);
+        };
+        calculate()
     }, [cart]);
-
-    //calculate the total and discount
-    function calculate() {
-        //add the totals together and assign to a variable
-        let sum = cart.reduce((acc, current) => {
-            return acc + current.amount;
-        }, 0);
-        //check for discount
-        if (cart.length >= 3) {
-            setDiscount(10);
-            sum *= .9;
-        }
-        //set the new total
-        setTotal(sum);
-        //calculate the bonus items
-        bonusEarned(sum);
-    };
 
     //function to remove bird from cart
     function removeBird(i) {
