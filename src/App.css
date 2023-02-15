@@ -1,10 +1,10 @@
-.Bird-container img {
+.birds img {
     width: 300px;
     height: 300px;
  grid-column: flex;
 }
 
-.Bird-container{
+.birds {
     border: solid 2px gray;
     font-size: 20px;
     text-align: center;
@@ -26,12 +26,12 @@
     font-weight: bolder;
 }
 
-.Bird-container h1 {
+.birds h1 {
     font-size: 30px;
 }
 
 
-.AllBirds {
+.card {
  display: flex;   
  flex-wrap: wrap;
  justify-content: space-evenly;

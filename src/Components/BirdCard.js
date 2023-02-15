@@ -1,13 +1,12 @@
 import React from 'react'
-import App from '../App';
+import bonusItems from '../data/bonusItems';
 function BirdCard (props) {
 
     return (
-        <div className="Bird-container">
-
+        <div className="birds">
             <h1>{props.name}</h1>
             <img src={props.image} alt=""></img>
-            <p>Price ${props.amount}.00</p>
+            <h4>${props.amount}</h4>
             <button onClick={() => props.adoptMe(props.bird)}>Adopt</button>
         </div>
     )

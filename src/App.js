@@ -8,16 +8,23 @@ import Checkout from "./Components/Checkout";
 function App() {
 
   const [cart , setCart] = useState([])
+  const [total , setTotal] = useState(0)
   // passing Birdcard info to cart 
   function adoptMe (bird) {
-    console.log(bird)
+    setCart([...cart, bird]) 
+    setTotal(total+bird.amount)
+    console.log(total)
   }
+
+ 
+
+
 
   console.log(birdData);
   return (
     <div className="App">
       <h1>Bird List</h1>
-      <div className="AllBirds">
+      <div className="card">
         {birdData.map((bird) => {
           return (
             <div>
@@ -34,7 +41,10 @@ function App() {
       </div>
 
       <div className="CartItems">
-        <Cart />
+        <Cart 
+         cart={cart}
+         total={total} 
+         />
       </div>
 
       <div ClassName="CheckOutItems">
@@ -43,5 +53,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
