@@ -47,6 +47,8 @@ function App() {
             )}
         </BirdLayout>
 
+        {/* Making sure that birdData and handleAdopt are defined here so they can be passed to other props. */}
+        <BirdLayout birds={birdData} handleAdopt={handleAdopt}/>
 
       <Cart cart={cart} setCart={setCart}/>
     </div>
@@ -56,4 +58,4 @@ function App() {
 export default App;
 
 
-// <BirdLayout birds={birdData} handleAdopt={handleAdopt}/>
+// 

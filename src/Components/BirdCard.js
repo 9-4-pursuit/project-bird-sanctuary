@@ -2,13 +2,17 @@
 import React from "react";
 
 function BirdCard(props) {
+
+  if (!props.birdy) {
+    return null;
+  }
+
   console.log(props.birdy.name);
   const { name, amount, id, img } = props.birdy;
 
   function handleAdopt() {
     console.log("Adopt button clicked");
   }
-
 
 
   return (
