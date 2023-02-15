@@ -1,0 +1,70 @@
+
+.card {
+    width: 250px;
+    text-align: center;
+    background-color: rgb(113, 169, 150);
+    position:relative;
+    box-shadow: 10px 10px 5px black;
+}
+
+.card button {
+    background-color: pink;
+    position: absolute;
+    top: 45px;
+    right: 3px;
+}
+.card p {
+    position: relative;
+    right: 40px;
+}
+
+.card h5 {
+    font-size:20px
+}
+
+.birds {
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    grid-area: birds;
+    margin: 10px;
+    justify-content: center;
+}
+
+.Cart {
+    grid-area: cart;
+    width: 265px;
+    text-align: center;
+    margin: 10px;
+    background-color: rgb(133, 187, 235);
+}
+
+.Cart button {
+    width: 60px; 
+    margin: 0px 5px;
+    padding: 0px;
+    text-align: center;
+    background-color: rgb(188, 48, 48);
+    color: rgb(240, 177, 82);
+}
+
+.Checkout {
+    grid-area: checkout;
+    width: 265px;
+    text-align: center;
+    margin: 10px;
+    background-color: rgb(133, 187, 235);
+}
+
+.Checkout .checkout-submit {
+    background-color: rgb(129, 181, 135);
+}
+
+main {
+    display: grid;
+    grid-template-areas: "cart birds"
+    "checkout birds"
+    ". birds";
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(46, 46, 224);
+}
