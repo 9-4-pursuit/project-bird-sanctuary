@@ -1,8 +1,6 @@
 
 
 function Cart({ cart, adoptBirdTotal,deleteBird, discount, setDiscount}) {
-  console.log(deleteBird)
- 
 
 
   return (
