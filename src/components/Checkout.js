@@ -13,11 +13,11 @@ function Checkout () {
         <label htmlFor="zipcode">Zip Code</label>
         <input type="number"/>
         <br></br>
-        <button type="submit">Submit</button>
+        <input className="button" type="submit" value="Submit" />
     </form>
       </div>
       </>
     );
-  };
+  }
   
 export default Checkout;

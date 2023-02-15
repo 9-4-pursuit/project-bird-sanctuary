@@ -1,22 +1,36 @@
 import { useState } from 'react';
 import birdData from './data/birds';
 import BirdCards from './components/BirdCards';
-import bonusItems from './data/bonusItems';
+// import bonusItems from './data/bonusItems';
 import Cart from './components/Cart';
 // import Checkout from './components/Checkout'
 import './App.css'
 
 function App () {
 const [birds, setBird] = useState(birdData);  
-const [insideCart, setInsideCart] = useState([]);
-const [cartTotal, setCartTotal] = useState(null);
-const [discount, setDiscount] = useState(false);
+const [cart, setCart] = useState([]);
+const [cartTotal, setCartTotal] = useState(0);
+const [discount, setDiscount] = useState(0);
+//const [bonusItems, setBonusItems] = useState(bonusItems)
 
+// ADOPT A BIRD HERE AND SEND DOWN TO BIRDCARDS
+//use a nameless function? ---> click on adopt and add one thing to collect the 
+//DO YOU WANT TO LIFT STATE AND USE CONDITIONS ON CLICK TO HIDE ADOPT BUTTON
 
-function handleAdopt (bird) {
+// function handleDeletion() {}
+function handleAdopt(bird) {
+
   console.log(bird)
+  // setCartTotal(cartTotal + bird.amount)
+  setCart([...cart, bird])
   setCartTotal(cartTotal + bird.amount)
-  setInsideCart= [...insideCart, bird]
+  if (cart.length >=3) {
+  setDiscount(10)
+    // } else (cart.length < 3)
+    //once we delete how do we set it back to 0? ---> place this on the onDelete function.
+    //TERNARY or NAH???
+//ADD THE CONTENT OF BIRDCARD TO CART
+//SPREAD THE INFO FROM THE cartContent
 
    }
   return (
@@ -25,17 +39,18 @@ function handleAdopt (bird) {
 
       <Cart 
         key="cart"
-        insideCart={insideCart}
+        cart={cart}
         cartTotal={cartTotal}
         birds={birds} 
-        bonusItems={bonusItems}
+        discount={discount}
+        //bonusItems={bonusItems}
         />
-  {/* <Checkout /> */}
-    { birds.map((bird) => { })}
+
       <BirdCards 
-        insideCart={insideCart}
-        birdData={birdData} 
-        callback={setBird}/>
+        birdData={birdData}
+        handleAdopt={handleAdopt}
+        //handleDeletion={handleDeletion}
+        />
     </div>
   );
 };

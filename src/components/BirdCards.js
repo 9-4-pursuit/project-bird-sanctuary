@@ -1,17 +1,11 @@
-import birdData from "../data/birds";
 
-
-function BirdCards(props) {
-  const data = props.birdData;
-  // const { name, amount, img } = data;
-  console.log(data);
+function BirdCards({handleAdopt, birdData}) {
   return (
     <div className="card">
       
-        {data.map((bird) => {
+        {birdData.map((bird) => {
           return (
-            <>
-              <div key={bird.div} className="birds">
+            <div key={bird.id} className="birds">
                 <li className="cards" key={bird.id}>
                   <h4>
                     <strong>{bird.name}</strong>
@@ -19,13 +13,13 @@ function BirdCards(props) {
                   <p>Price: ${bird.amount}</p>
                   <img className="img" src={bird.img} alt="birdimage" />
                   <br></br>
-                  <button>Adopt Me</button>
+                  {/* PLEASE ADD A BUTTON BELOW TO SEND DOWN THE CALLBACK FUNCTION 
+                  TO ADOPT BIRD AND ADD THE TEMPLATE TO CART */}
+                  <button onClick={() => handleAdopt(bird,)}>Adopt Me</button>
                 </li>
               </div>
-              </>
           );
         })}
-      
     </div>
   );
 }
