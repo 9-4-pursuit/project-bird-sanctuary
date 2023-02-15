@@ -4,19 +4,24 @@
 
 
 const Cart = ({ cart, discount, total, bonus }) => {
+    function deleteBird(event) {
+        event.target.parentNode.remove()
+         }
+
     console.log(bonus)
     return (
         <div className="Cart">
             <h1>Cart</h1>
             <p><i>Discount {discount}%</i></p>
             <h4><strong>Total: ${total}</strong></h4>
-            <p>Your donations qualify you for the following items</p>
+            <p></p>
 
         <ol>
         {cart.map((bird) => (
             <li>
-            <p>{bird.name}</p>
+            <p>{bird.name}    </p>
             <p>${bird.amount}</p>
+            <button onClick={deleteBird}>Delete</button>
             </li>
         ))}
         </ol>
@@ -24,10 +29,10 @@ const Cart = ({ cart, discount, total, bonus }) => {
 
         <ul>
             <li>
-            <h5>Your donation has qualifies you for the following bonueses</h5>
+            <h5>Your donations qualify you for the following items</h5>
              {bonus.map((item, index) => (
             <li key={index}>
-                {item}
+                {item} 
             </li>
             ))}
 
