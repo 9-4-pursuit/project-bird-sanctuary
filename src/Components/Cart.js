@@ -1,6 +1,6 @@
+import bonusItems from "../data/bonusItems"
 
-
-function Cart({ cartItems, defaultStatus, bonusItem, discount}) {
+function Cart({ cartItems, defaultStatus, discount}) {
     // const [total, setTotal] = useState(0)
 
     const total = cartItems.length > 0 ? cartItems.reduce((curr, acc) =>{
@@ -26,7 +26,7 @@ function Cart({ cartItems, defaultStatus, bonusItem, discount}) {
     return (
         <div className="Cart">
             <h3>Cart</h3>
-            <h4>Discount: {discount}%</h4>
+            <h5>Discount: {discount}%</h5>
             <h4>Total: ${total}</h4>
             <ol>
 
@@ -43,13 +43,10 @@ function Cart({ cartItems, defaultStatus, bonusItem, discount}) {
             <div style={defaultStatus ? { display: "none" } : { display: "block" }}>
                     <h6>Your donations have qualified you for the following Items:</h6>
                 <ul>
-                    {
-                        bonusItem.map((item)=>{
-                            return(
-                                <li>{item}</li>
-                            )
-                        })
-                    }
+                {total >= 100 ? <li>{bonusItems[0]}</li> : "" }
+                {total >= 300 ? <li>{bonusItems[1]}</li> : "" }
+                {total >= 500 ? <li>{bonusItems[2]}</li> : "" }
+                {total >= 1000 ? <li>{bonusItems[3]}</li> : "" }
                 </ul>
             </div>
             

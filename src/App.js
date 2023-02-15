@@ -3,15 +3,15 @@ import birdData from "./data/birds"
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import { useState } from "react";
-import bonusItems from "./data/bonusItems";
+// import bonusItems from "./data/bonusItems";
 
 
 function App() {
 
   const [cartItems, setCartItems] = useState([])
   const [defaultStatus, toggleStatus] = useState(true)
-  const [bonusIndex, setBonusIndex] = useState(0)
-  const [bonusItem, setBonusItem] = useState([])
+  // const [bonusIndex, setBonusIndex] = useState(0)
+  // const [bonusItem, setBonusItem] = useState([])
   // const [total, setTotal] = useState(0)
   // const [totalArr, setTotalArr] = useState([])
   const [discount, setDiscount] = useState(0)
@@ -34,16 +34,16 @@ function App() {
   const birdArr = [...birdData]
   function addingToCart(birdID) {
 
-    const bonusArr = [...bonusItems]
+    // const bonusArr = [...bonusItems]
 
-    setBonusIndex(bonusIndex + 1)
+    // setBonusIndex(bonusIndex + 1)
 
     const index = birdArr.findIndex((bird) => birdID === bird.id)
     setCartItems([birdArr[index], ...cartItems])
     // cartItems.push(birdArr[index])
     // setCartItem(birdArr[index])
 
-    setBonusItem([...bonusItem, bonusArr[bonusIndex]])
+    // setBonusItem([...bonusItem, bonusArr)
     // settingTotal()
     
     if (cartItems.length >= 3) {
@@ -68,7 +68,7 @@ function App() {
         <Cart 
         cartItems={cartItems} 
         defaultStatus={defaultStatus} 
-        bonusItem={bonusItem} 
+        // bonusItem={bonusItem} 
         // total={total} 
         discount={discount}
         // settingTotal={settingTotal}
