@@ -22,8 +22,6 @@ function App () {
   useEffect(() => {
     setDiscount(cart.length >= 3 ? 10 : 0);
   
-    // const bonusItems = [/* your bonus items */];
-  
     setBonus(
       total <= 100 
         ? [] 
@@ -43,80 +41,6 @@ function App () {
     setCart([...cart, bird]);
     setTotal(total + bird.amount);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // const addToCart = (bird) => {
-  //   setCart([...cart, bird]);
-  //   setTotal(total + bird.amount);
-  //   setDiscount(cart.length >= 3 ? 10 : 0);
-  //   setBonus(
-  //     total <= 100 
-  //     ? [] 
-  //     : total >= 100 && total < 300
-  //     ? bonusItems.slice(0, 1) 
-  //     : total >= 300 && total < 500 
-  //     ? bonusItems.slice(0, 2) 
-  //     : total >= 500 && total < 1000 
-  //     ? bonusItems.slice(0, 3) 
-  //     : bonusItems
-  //       )
-  //   }
-
-
-
-
-        // function addBonus(total) {
-        //   let abonus = [];
-        //   if (total >= 100 && total <= 300) {
-        //     abonus.push(bonusItems[0]);
-        //   } else if (total > 300 && total <= 500) {
-        //     abonus.push(bonusItems[0], bonusItems[1]);
-        //   } else if (total > 500 && total <= 1000) {
-        //     abonus.push(bonusItems[2]);
-        //   } else if (total > 1000) {
-        //     abonus.push(bonusItems[3]);
-        //   }
-        //   return abonus;
-        // }
-
-
-  
-    // setBonus(
-    //   total >= 1000
-    //   ? bonusItems
-    //   : total >= 500
-    //   ? bonusItems.slice(0, 3)
-    //   : total >= 300
-    //   ? bonusItems.slice(0, 2) 
-    //   : total >= 100
-    //   ? bonusItems.slice(0, 1) 
-    //   : []
-    // )
-        // };
-
-
-
-
-  
-
 
   return (
     <div className="app">

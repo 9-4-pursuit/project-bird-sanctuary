@@ -4,15 +4,17 @@
 
 
 const Cart = ({ cart, discount, total, bonus }) => {
+
     function deleteBird(event) {
         event.target.parentNode.remove()
          }
+         
 
     console.log(bonus)
     return (
         <div className="Cart">
             <h1>Cart</h1>
-            <p><i>Discount {discount}%</i></p>
+            <p><i>Discount: {discount}%</i></p>
             <h4><strong>Total: ${total}</strong></h4>
             <p></p>
 
@@ -25,7 +27,6 @@ const Cart = ({ cart, discount, total, bonus }) => {
             </li>
         ))}
         </ol>
-
 
         <ul>
             <li>

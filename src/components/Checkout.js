@@ -1,19 +1,86 @@
 
-function Checkout () {
-    return (
-        <div>
-            <form className="form">
-                <label htmlFor="firstname">First Name</label>
-                <input type="text"></input>
-                <label htmlFor="lastname">Last Name</label>
-                <input type="text"></input>      
-                <label htmlFor="email">Email</label>
-                <input type="email"></input>  
-                <label htmlFor="zipcode">Zip Code</label>
-                <input type="number"></input>          
-                <button type="submit">Submit</button>
+import { useState } from "react";
+
+function Checkout(props) {
+    let { setCart } = props
+      const [firstName, setFirstName] = useState("");
+      const [lastName, setLastName] = useState("");
+      const [email, setEmail] = useState("");
+      const [zipCode, setZipCode] = useState("");
+    
+     function userEntry(event) {
+        event.preventDefault();
+        if (!firstName || !lastName || !email || !zipCode) {
+          alert("Please complete the form");
+        } else {
+          alert("You have adopted birds. Thank you!");
+          setCart([]);
+          setEmail("");
+          setFirstName("");
+          setLastName("");
+          setZipCode("");
+        }
+      };
+    
+      
+      return (
+        <div className="Checkout">
+          <section>
+            <h1>Checkout</h1>
+            <form 
+            onSubmit={userEntry}>
+              <label>
+                First Name
+                <br></br>
+                <input
+                  value={firstName}
+                  onChange={(event) => setFirstName(event.target.value)}
+                  id="first-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name..."
+                />
+              </label>
+              <label>
+                Last Name
+                <br></br>
+                <input
+                  value={lastName}
+                  onChange={(event) => setLastName(event.target.value)}
+                  id="last-name"
+                  name="lastname"
+                  type="text"
+                  placeholder="Your last name..."
+                />
+              </label>
+              <label>
+                Email
+                <br></br>
+                <input
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  id="email"
+                  name="email"
+                  type="text"
+                />
+              </label>
+              <label>
+                Zip Code
+                <br></br>
+                <input
+                  value={zipCode}
+                  onChange={(event) => setZipCode(event.target.value)}
+                  id="zip"
+                  name="zip"
+                  type="number"
+                />
+              </label>
+              <br></br>
+              <input type="submit" text="Submit" />
             </form>
+          </section>
         </div>
-    )
-}
-export default Checkout
+      );
+    };
+    
+    export default Checkout;
