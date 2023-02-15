@@ -58,6 +58,7 @@ export default function Checkout(props) {
                 type="number" ></input>
 
             <input
+                className="checkout-submit"
                 type="submit" />
         </form>
 

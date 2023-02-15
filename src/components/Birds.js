@@ -17,7 +17,7 @@ export default function Birds(props) {
             <img
                 src={bird.img}
                 alt={bird.name}
-                width="150px"></img>
+                height="150px"></img>
             {/* add bird to cart on button click */}
             <button
                 className="adopt"
