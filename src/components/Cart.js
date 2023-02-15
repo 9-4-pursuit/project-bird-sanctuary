@@ -24,7 +24,7 @@ const Cart = ({ cart, discount, total, bonus }) => {
 
         <ul>
             <li>
-
+            <h5>Your donation has qualifies you for the following bonueses</h5>
              {bonus.map((item, index) => (
             <li key={index}>
                 {item}
