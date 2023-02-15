@@ -30,3 +30,39 @@ main{
     grid-template-areas: 
     "aside main main";
 }
+
+body{
+    background-color: pink;
+}
+
+button{
+    background-color: gray;
+    color: white;
+    border-radius: 10%;
+}
+
+#submit{
+    background-color: gray;
+    color: white;
+}
+
+#indCard{
+    border: solid 3px gray;
+    height: auto;
+    width: 150px;
+    border-radius: 10%;
+}
+
+.Cart{
+    border: solid 3px gray;
+    height: auto;
+    width: 350px;
+    border-radius: 6%; 
+}
+
+.Checkout{
+    border: solid 3px gray;
+    height: auto;
+    width: 350px;
+    border-radius: 6%; 
+}

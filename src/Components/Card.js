@@ -9,7 +9,7 @@ function Card({ addingToCart, birdData }) {
                 {
                     bird.map((data) => {
                         return (
-                            <li key={data.id}><h6>{data.name}</h6>
+                            <li id="indCard" key={data.id}><h6>{data.name}</h6>
                                 <img src={data.img} alt={data.name} />
                                 <p>amount: ${data.amount}</p>
                                 <button onClick={() => addingToCart(data.id)}>Adopt</button>

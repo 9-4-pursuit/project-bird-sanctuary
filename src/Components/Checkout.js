@@ -21,7 +21,7 @@ function Checkout({ submitForm, form, setForm }) {
                 <label>Zip Code
                     <input onChange={handleTextChange} value={form.zipCode} type="number" />
                 </label>
-                <input type="submit" value="SUBMIT" />
+                <input type="submit" value="SUBMIT" id="submit" />
 
             </form>
         </div>
