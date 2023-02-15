@@ -1,6 +1,6 @@
 import bonusItems from "../data/bonusItems"
 
-function Cart({ cartItems, defaultStatus, discount}) {
+function Cart({ cartItems, defaultStatus, discount, removeBird}) {
     // const [total, setTotal] = useState(0)
 
     const total = cartItems.length > 0 ? cartItems.reduce((curr, acc) =>{
@@ -31,10 +31,11 @@ function Cart({ cartItems, defaultStatus, discount}) {
             <ol>
 
                 {
-                    cartItems.map((item) => {
+                    cartItems.map((item, index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 {item.name}: ${item.amount}
+                                <button onClick={()=> removeBird(index)}>Remove</button>
                             </li>
                         )
                     })
