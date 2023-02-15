@@ -18,6 +18,11 @@ function App () {
   const [bonus, setBonus] = useState([]);
 
 
+  const addToCart = (bird) => {
+
+  }
+
+
 
   return (
     <div className="app">
@@ -28,7 +33,7 @@ function App () {
         discount={discount}
         bonusItems={bonusItems}
         />
-        <BirdCards birdData={birdData}/>
+        <BirdCards birds={birdData}/>
         <Checkout />
     </div>
   );
