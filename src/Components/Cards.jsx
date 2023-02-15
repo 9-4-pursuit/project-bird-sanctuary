@@ -7,14 +7,24 @@ setBirds([...birds, bird])
 }
   return( 
 
-
-    <section>
+    <section
+    style={{
+        fontFamily: '-apple-system',
+        fontSize: "2rem",
+        fontWeight: 2.5,
+        lineHeight: 2.5,
+        color: "#292b2c",
+        backgroundColor: "beige",
+        padding: "0 2em"
+      }}
+    >
       <ul className="birds">
         {birdData.map((bird) => (
 
          <li className="birds" id={bird.id}>
-            <h4>{bird.name}</h4>
-            <p>Price: ${bird.amount}</p>
+            <h4 style={{backgroundColor: "lightblue"}}>{bird.name}</h4>
+
+            <p style={{backgroundColor: "limegreen"}}>Price: ${bird.amount}</p>
             <img
               src={bird.img}
               width="200"

@@ -14,12 +14,11 @@ function Cart({ birds, setBirds }) {
 
   return (
     <div className="Cart">
-      <h2>Cart</h2>
+      <h2 style={{backgroundColor: "lightblue"}}>Cart</h2>
       <h4>
-        Total: $
-        {total}
+        Total: ${total}
       </h4>
-      <p>Discount: {birds.length >= 3 ? "10%" : "0%"}</p>
+      <p style={{backgroundColor: "pink"}}>Discount: {birds.length >= 3 ? "10%" : "0%"}</p>
       <ol>
         {/*  */}
         {birds.map((bird) => {
@@ -28,9 +27,11 @@ function Cart({ birds, setBirds }) {
               {bird.name}: ${bird.amount}
               <button 
                 onClick={() => {
-                  updateBirdsArray(bird)
+                    updateBirdsArray(bird)
+                    alert("You have adopted birds. Thank you!")
+
                 }}
-              ></button>
+              >Remove</button>
             </li>
           );
         })}
