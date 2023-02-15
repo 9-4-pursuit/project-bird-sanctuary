@@ -8,7 +8,7 @@ function Checkout() {
                 <label htmlFor="lastname">Last Name</label>
                 <input type="text"/>
                 <label htmlFor="email">Email</label>
-                <input type="text"/>
+                <input type="email"/>
                 <label htmlFor="zipcode">Zip Code</label>
                 <input type="number"/>
                 <button type="submit">Submit</button>

@@ -1,6 +1,7 @@
 .app {
     display: grid;
     grid-template-columns: auto auto;
+    background-color: grey;
 }
 
 
@@ -29,12 +30,15 @@
 
 .form {
     border: 3px solid rgb(31, 11, 214);
+    text-align: center;
     
 
 }
 
-.cart {
+.Cart {
     border: 3px solid red;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+
     
 }
