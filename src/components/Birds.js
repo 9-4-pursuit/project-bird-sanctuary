@@ -1,5 +1,4 @@
 
-import BirdCard from "./BirdCard";
 import birdData from "../data/birds";
 
 export default function Birds(props) {
@@ -11,12 +10,19 @@ export default function Birds(props) {
     return (<div className="birds">
         {/* iterate through each bird and display the card */}
         {birdData.map((bird) => {
-            //pass the bird object down as a prop, along with the carts state and set state function
-            return (<BirdCard
-                bird={bird}
-                cart={cart}
-                setCart={setCart}
-                key={bird.id} />)
+            //create the bird card with necessary information
+            return (<div className="card">
+            <h5>{bird.name}</h5>
+            <p>Price: ${bird.amount}</p>
+            <img
+                src={bird.img}
+                alt={bird.name}
+                width="150px"></img>
+            {/* add bird to cart on button click */}
+            <button
+                className="adopt"
+                onClick={() => setCart([...cart, bird])} >Adopt</button>
+        </div>);
         })
         }
 
