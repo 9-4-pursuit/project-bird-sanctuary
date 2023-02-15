@@ -1,12 +1,10 @@
-import birdData from "../data/birds";
 
-
-function Card() {
+function Card(props) {
     return (
         <div>
-            <p>{birdData[0].name}</p>
-            <img src={birdData[0].img} width='200' height='200'></img>
-            <p>${birdData[0].amount}</p>
+            <p>{props.birdInfo.name}</p>
+            <img src={props.birdInfo.img} width='200' height='200'></img>
+            <p>${props.birdInfo.amount}</p>
             <button>Adopt</button>
         </div>
     )
