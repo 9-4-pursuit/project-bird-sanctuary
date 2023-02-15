@@ -1,19 +1,29 @@
-import { useState } from "react";
+// import { useState } from "react";
 import React from "react";
 
 function BirdCard(props) {
   console.log(props.birdy.name);
   const { name, amount, id, img } = props.birdy;
 
+  function handleAdopt() {
+    console.log("Adopt button clicked");
+  }
+
+
+
   return (
     <div className="card">
-      <img alt={`${name} profile pic`} src={img} />
-      <h2>{name}</h2>
-      <p>Price: ${amount}</p>
-      <p>id: {id}</p>
-      <button name="adopt" id="adopt">
+      <div className="image-box">
+        <img alt={`${name} profile pic`} src={img} />
+      </div>
+      <div className="details">
+        <h2>{name}</h2>
+        <p>Price: ${amount}</p>
+        <p>id: {id}</p>
+        <button name="adopt" id="adopt" onClick={handleAdopt}>
         Adopt
-      </button>
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,51 +1,83 @@
-import birdData from "../data/birds";
+//import birdData from "../data/birds";
 // import "./App.css";
 //import styles from './App.css'
 
-function Cart({ bird, bonus }) {
-  const [total, setTotal] = 0;
+function Cart() {
 
-  let discount = 0;
-  const totalCost = 0;
-  const bonuses = "";
-  const birdsInCart = 0;
+  // const{ birds, total, discount } = cart;
 
-  switch (birdsInCart) {
-    case 0:
-    case 1:
-    case 2:
-      console.log("One bird");
-      discount = 0;
-      break;
-    default:
-      console.log("default number of birds");
-  }
+const cart = {
+  birds:[],
+  total: 0,
+  discount: 0,
+  bonuses:[],
+}
+
+
+  // const cart = JSON.parse(localStorage.getItem("cart")) || {
+  //   birds:[],
+  //   total: 0,
+  //   discount: 0,
+  //   bonuses:[],
+  // };
+
+  
+  // const [total, setTotal] = 0;
+
+  // let discount = 0;
+  // const totalCost = 0;
+  // const bonuses = "";
+  // const birdsInCart = 0;
+
+  // switch (birdsInCart) {
+  //   case 0:
+  //   case 1:
+  //   case 2:
+  //     console.log("One bird");
+  //     discount = 0;
+  //     break;
+  //   default:
+  //     console.log("default number of birds");
+  // }
 
   return (
-    <div>
-      <h1>Hello, Cartworld!</h1>
+    <div className="Cart">
+      <h3>Your cart</h3>
+      <ol>
+        {cart.birds.map((bird) => (
+          <li>{bird.name}</li>
+        ))}
+      </ol>
 
-      <form className="cart">
-        <fieldset>
-          <label>
-            <p> Example </p>
-            <input name="example" />
-          </label>
-        </fieldset>
-        <button type="submit">Submit button</button>
-      </form>
-      <form>
-        <fieldset>
-          <label for="clear-cart">
-            <p>for clear cart</p>
-            <input name="clear-cart" />
-          </label>
-        </fieldset>
-        <button
+      <p> Discount: <span id="discount-amount">{cart.discount}%</span> </p>
+
+      <h4>
+        Total: $<span>{cart.total}</span>
+      </h4>
+
+      <button
           className="clear-cart"
-          onSubmit="squigly lines and a prop?"
-        ></button>
-      </form>
+          onClick={() => {
+            localStorage.removeItem("cart");
+          }}
+          >
+            Clear cart
+          </button>
+
+      <button 
+        className="submit" 
+        content="Submit"
+        onClick={() => {
+          alert("You have adopted birds. Thank you!");
+          localStorage.removeItem("cart");
+        }}
+        >
+          Submit
+        </button>
+      <p className="success-alert" id="success-alert"></p>
+
+
+
       <p> Bonus items earned: </p>
       <p>
         {" "}
@@ -53,12 +85,7 @@ function Cart({ bird, bonus }) {
       </p>
       <p></p>
 
-      <h4>
-        Total: $<span>tbd</span>
-      </h4>
-      <button className="submit" content="Submit"></button>
-      <p className="success-alert" id="success-alert"></p>
-    </div>
+      </div>
   );
 }
 

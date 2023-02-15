@@ -1,8 +1,21 @@
 import React from "react";
+import birdData from "../data/birds";
 import BirdCard from "./BirdCard";
 
 
-//const data = contacts.results
+// const BirdLayout = ({handleAdopt}) => {
+//   return (
+//     <section>
+//       {
+//         birdData.map((item)=> {
+//           <Cards item={item} handleAdopt={handleAdopt} />
+//         })
+//       }
+//     </section>
+//   )
+// }
+
+
 function BirdLayout(props) {
 
   const data = props.birds;
@@ -10,10 +23,16 @@ function BirdLayout(props) {
     return (
         <div className="layout">
             {data && data.map((birdy, index) => {
-                return <BirdCard birdy = {birdy} />
+                return <BirdCard birdy = {birdy} handleAdopt={props.handleAdopt} />
             })
             }
+<BirdCard birdy={bird} handleAdopt={() => handleAdopt(bird)} setCart={setCart} />
 
+     <section>
+       {birdData.map((item) => 
+      <Cards item={item} handleAdopt={handleAdopt} />
+         )}
+     </section>
 
         </div>
     )
