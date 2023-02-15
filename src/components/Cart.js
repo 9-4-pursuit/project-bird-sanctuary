@@ -4,6 +4,7 @@
 
 
 const Cart = ({ cart, discount, total, bonus }) => {
+    console.log(bonus)
     return (
         <div className="Cart">
             <h1>Cart</h1>
@@ -13,22 +14,25 @@ const Cart = ({ cart, discount, total, bonus }) => {
 
         <ol>
         {cart.map((bird) => (
-            
             <li>
             <p>{bird.name}</p>
             <p>${bird.amount}</p>
-           
             </li>
         ))}
         </ol>
+
+
         <ul>
-             {bonus.map((item) => (
             <li>
+
+             {bonus.map((item, index) => (
+            <li key={index}>
                 {item}
             </li>
-            
-            )) 
-            }</ul>
+            ))}
+
+                </li>
+            </ul>
         </div>
     )
 }
