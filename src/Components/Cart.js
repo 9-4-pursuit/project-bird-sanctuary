@@ -1,36 +1,29 @@
-function Cart({ cart, adoptBirdTotal, setAdoptBirdTotal }) {
-  //console.log(adoptBirdTotal)
 
-  //   function calculateTotal() {
-  //     let total = adoptBirdTotal;
-  //     cart.map((bird) => {
-  //        return  adoptBirdTotal += bird.amount
-  //     })
-  //     return total
-  //   }
 
-  //onClick={() => calculateTotal(adoptBirdTotal)}
+function Cart({ cart, adoptBirdTotal,deleteBird, discount, setDiscount}) {
+  console.log(deleteBird)
+ 
+
 
   return (
     <div className="cart">
       <h1>Cart</h1>
-      <p>Discount: %0 </p>
+      <p>Discount: %{discount}</p>
       <h4>
         <strong>Total:$ {adoptBirdTotal}</strong>
       </h4>
-      {cart.map((birdItem) => {
-        setAdoptBirdTotal(birdItem.amount);
-
-        return (
-          <ol key={birdItem.id}>
+      {cart.map((bird) => {
+          adoptBirdTotal = bird.amount
+          return (
+              <ol key={bird.id}>
             <li>
-              {birdItem.name} ${birdItem.amount}.00
+              {bird.name} ${bird.amount}.00
             </li>
-            <button>delete</button>
+            <button onClick={() => deleteBird(bird)}>delete</button>
           </ol>
         );
       })}
-      <p>Your donations has qualified you for the follwing items</p>
+      <p>Your donations has qualified you for the following items</p>
     </div>
   );
 }
