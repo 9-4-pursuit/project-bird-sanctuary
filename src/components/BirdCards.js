@@ -1,16 +1,17 @@
-function BirdCards (props) {
-    const data = props.birdData
-    // const [{ name, amount, img }] = data;
-    // console.log(data)
+import React from 'react';
+import BirdCard from './BirdCard';
+
+function BirdCards({ birdData, cartData, setCartData }) {
     return (
-        <div className="card">
-        <div>
-        <h1>Title</h1>
-        <h3>Price</h3>
-        <img> </img>
-        <button>Adopt</button>
-        </div>
+
+        <div className='birdcard'>
+            <BirdCard
+                birdData={birdData}
+                cartData={cartData}
+                setCartData={setCartData}
+            />
         </div>
     )
 }
+
 export default BirdCards;
