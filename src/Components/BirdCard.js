@@ -1,5 +1,4 @@
 import React from 'react'
-import bonusItems from '../data/bonusItems';
 function BirdCard (props) {
 
     return (

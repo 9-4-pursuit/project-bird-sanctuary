@@ -4,7 +4,7 @@ function Cart(props) {
     <div className="Cart">
       <h1>Cart</h1>
       <ol></ol>
-      <p>Discount: 0% </p>
+      <p>Discount: {props.discount}% </p>
       <h4>
         <strong>Total: $0.00 </strong>
       </h4>

@@ -21,7 +21,16 @@
 
 }
 
-.App h1 {
+.birds button {
+  background-color: aliceblue;
+}
+
+.App{
+  display: grid ;
+  grid-template-columns: 2fr 4fr;
+  margin-top: 50px;
+}
+.App h1{
     font-family: cursive;
     font-weight: bolder;
 }
@@ -35,6 +44,15 @@
  display: flex;   
  flex-wrap: wrap;
  justify-content: space-evenly;
+ grid-column-start: 2;
+ grid-row-start: 1;
+}
+
+.left{
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Cart{
