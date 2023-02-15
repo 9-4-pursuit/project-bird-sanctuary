@@ -7,10 +7,13 @@ function BirdCard(props) {
 
   return (
     <div className="card">
+      <img alt={`${name} profile pic`} src={img} />
       <h2>{name}</h2>
       <p>Price: ${amount}</p>
       <p>id: {id}</p>
-      <img alt={`${name} profile pic`} src={img} />
+      <button name="adopt" id="adopt">
+        Adopt
+      </button>
     </div>
   );
 }
@@ -21,4 +24,4 @@ export default BirdCard;
 //<p>Price: ${props.birdy.amount} OR {amount}</p>
 // <p>id: {props.birdy.id}</p> OR {id}
 // <img alt="profile pic" src="{props.birdy.image}/> */}
-// <button name="adopt" id="adopt" >Adopt</button>
+//

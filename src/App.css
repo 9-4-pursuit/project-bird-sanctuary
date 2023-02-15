@@ -2,6 +2,29 @@
     visibility: hidden;
 }
 
+*{
+    box-sizing: border-box;
+}
+
+
+
+.layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+
+}
+
+.layout img {
+    object-fit: cover;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
 .App {
     text-align: center;
 }
@@ -18,6 +41,16 @@ App {
     margin: 20px 0px
 }
 
+.card {
+    display: ;
+}
+
+
+button {
+    margin:25px;
+    border: solid black;
+
+}
 
 
 .App-header {

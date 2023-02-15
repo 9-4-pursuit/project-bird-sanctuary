@@ -8,7 +8,7 @@ function BirdLayout(props) {
   const data = props.birds;
 
     return (
-        <div>
+        <div className="layout">
             {data && data.map((birdy, index) => {
                 return <BirdCard birdy = {birdy} />
             })
