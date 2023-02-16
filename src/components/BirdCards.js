@@ -16,7 +16,7 @@ const BirdCards = ({ birds, addToCart }) => {
             </li>
             </div>
         )
-      })
+      }
       </div>
 )
 }

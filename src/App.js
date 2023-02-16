@@ -23,7 +23,7 @@ function App () {
     setDiscount(cart.length >= 3 ? 10 : 0);
   
     setBonus(
-      total <= 100 
+      total <= 99
         ? [] 
         : total >= 100 && total < 300
         ? bonusItems.slice(0, 1) 
@@ -33,8 +33,7 @@ function App () {
         ? bonusItems.slice(0, 3) 
         : bonusItems
     );
-  }, 
-  [cart, total]
+  },[cart, total]
   );
   
   const addToCart = (bird) => {
@@ -52,7 +51,11 @@ function App () {
         bonus={bonus}
         />
         <BirdCards birds={birdData} addToCart={addToCart}/>
-        <Checkout />
+        <Checkout 
+        setCart={setCart}
+        setBonus={setBonus}
+        setTotal={setTotal}
+        />
     </div>
   );
 };

@@ -28,16 +28,15 @@ const Cart = ({ cart, discount, total, bonus }) => {
         ))}
         </ol>
 
+        <h5>Your donations qualify you for the following items</h5>
         <ul>
-            <li>
-            <h5>Your donations qualify you for the following items</h5>
+            
              {bonus.map((item, index) => (
             <li key={index}>
                 {item} 
             </li>
             ))}
-
-                </li>
+  
             </ul>
         </div>
     )

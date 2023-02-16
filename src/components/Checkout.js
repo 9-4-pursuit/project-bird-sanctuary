@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 
-function Checkout(props) {
-    let { setCart } = props
+
+    
+    const Checkout = ({setCart, setBonus, setTotal}) => {
       const [firstName, setFirstName] = useState("");
       const [lastName, setLastName] = useState("");
       const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ function Checkout(props) {
           setFirstName("");
           setLastName("");
           setZipCode("");
+          setBonus([])
+          setTotal(0)
         }
       };
     
@@ -38,7 +41,7 @@ function Checkout(props) {
                   id="first-name"
                   name="name"
                   type="text"
-                  placeholder="Your name..."
+                  placeholder="Your first name..."
                 />
               </label>
               <label>
@@ -62,6 +65,7 @@ function Checkout(props) {
                   id="email"
                   name="email"
                   type="text"
+                  placeholder="Your email..."
                 />
               </label>
               <label>
@@ -73,6 +77,7 @@ function Checkout(props) {
                   id="zip"
                   name="zip"
                   type="number"
+                  placeholder="Your zip code..."
                 />
               </label>
               <br></br>
