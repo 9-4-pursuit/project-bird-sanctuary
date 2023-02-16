@@ -4,6 +4,7 @@ import Form from "./Components/Form";
 import Cards from "./Components/Cards";
 import Cart from "./Components/Cart";
 import "./index.css"
+import './App.css'
 
 //preping our hooks 
 
@@ -24,11 +25,11 @@ zipCode: "",
      <Form setBirds={setBirds} setForm={setForm}/>
      </div>
       {/* importing the Cart components  */}
-     <div className="card">
+     <div className="cart">
         <Cart birds={birds} setBirds={setBirds}/>
    </div>
       {/* importing the info of the birds from cards component */}
-  <div className="card">
+  <div id='birdCard' className="card">
         <Cards
            birds={birds}
           setBirds={setBirds}

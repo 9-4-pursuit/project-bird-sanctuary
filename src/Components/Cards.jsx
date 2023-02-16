@@ -31,11 +31,11 @@ setBirds([...birds, bird])
               height="200"
               alt="bird"
             ></img>
+            <br></br>
             <button className="myButton" onClick={() => birdForCarts(bird)}>
               Adopt
             </button>
           </li>
-
         ))}
       </ul>
     </section>

@@ -20,7 +20,7 @@ function Cart({ birds, setBirds }) {
       </h4>
       <p style={{backgroundColor: "pink"}}>Discount: {birds.length >= 3 ? "10%" : "0%"}</p>
       <ol>
-        {/*  */}
+        {/* mapping the birds chosen by user */}
         {birds.map((bird) => {
           return (
             <li key={bird.id}>
@@ -28,9 +28,7 @@ function Cart({ birds, setBirds }) {
               <button 
                 onClick={() => {
                     updateBirdsArray(bird)
-                    alert("You have adopted birds. Thank you!")
-
-                }}
+               }}
               >Remove</button>
             </li>
           );
@@ -38,10 +36,11 @@ function Cart({ birds, setBirds }) {
       </ol>
       <p>Your donations have qualified you for the following items:</p>
       <ul>
-      {total > 99 ? <li>{bonusItems[0]} </li> : null}
-       {total> 100 ? <li>{bonusItems[1]} </li> : null}
+        {/* ternary to set up bonus items and looping through its array [] */}
+      {total > 99 ? <li>{bonusItems[0]}</li> : null}
+       {total > 100 ? <li>{bonusItems[1]}</li> : null}
         {total > 499 ? <li>{bonusItems[2]}</li> : null}
-        {total > 999 ? <li>{bonusItems[3]} </li> : null}
+        {total > 999 ? <li>{bonusItems[3]}</li> : null}
       </ul>
     </div>
   );
