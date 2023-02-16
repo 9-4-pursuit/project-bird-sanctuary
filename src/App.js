@@ -26,21 +26,22 @@ function App() {
     setCart(newCart);
     setAdoptBirdTotal(adoptBirdTotal - bird.amount);
     handleBonus(adoptBirdTotal - bird.amount)
+    
   }
 
   
   function handleBonus(adoptBirdTotal) {
 
-    if (adoptBirdTotal === 0) {
-    setBonus([])
-    }    else if (adoptBirdTotal  >= 100 && adoptBirdTotal <= 300) {
+        if (adoptBirdTotal  >= 100 && adoptBirdTotal < 300) {
           setBonus([bonusItems[0]]);
-        } else if (adoptBirdTotal >= 300 && adoptBirdTotal <= 500) {
+        } else if (adoptBirdTotal >= 300 && adoptBirdTotal < 500) {
           setBonus([bonusItems[0], bonusItems[1]]);
-        } else if (adoptBirdTotal >= 500 && adoptBirdTotal <= 1000) {
+        } else if (adoptBirdTotal >= 500 && adoptBirdTotal < 1000) {
           setBonus([bonusItems[0], bonusItems[1], bonusItems[2]]);
-        } else {
+        } else if (adoptBirdTotal >= 1000) {
           setBonus(bonusItems);
+        } else {
+          setBonus([]);
         }
       }
     
@@ -48,8 +49,10 @@ function App() {
   function handleSubmit (e) {
     e.preventDefault()
     setCart([]);
-    setBonus(0)
-    alert("You have adopted birds. Thank you!")
+    setBonus([])
+    setAdoptBirdTotal(0)
+    alert("You have adopted birds. Thank you!");
+    e.target.value = ""
   }
 
  

@@ -3,17 +3,17 @@
 
 function Checkout ({handleSubmit}) {
     return (
-        <div >
+        <div  >
             <form className="Checkout" >
-                <label htmlFor="firstname">First Name</label>
-                <input type="text"/>
-                <label htmlFor="lastname">Last Name</label>
-                <input type="text"/>
+                <label htmlFor="firstName">First Name</label>
+                <input id ="firstName" type="text"/>
+                <label htmlFor="lastName">Last Name</label>
+                <input id ="lastName" type="text"/>
                 <label htmlFor="email">Email</label>
-                <input type="email"/>
+                <input id="email" type="email"/>
                 <label htmlFor="zipcode">Zip Code</label>
-                <input type="text" autoComplete="postal-code"/>
-                <button type="submit" onClick={handleSubmit} >Submit</button> 
+                <input id="zipcode" type="text" autoComplete="postal-code"/>
+                <input type="submit" onClick={handleSubmit} ></input> 
             </form>
         </div>
     )

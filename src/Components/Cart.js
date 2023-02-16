@@ -11,9 +11,9 @@ function Cart({ cart, adoptBirdTotal, deleteBird, bonus }) {
   return (
     <div className="Cart">
       <h1>Cart</h1>
-      <p>Discount: {cart.length >= 3 ? 10 : 0} %</p>
+      <p>Discount: {cart.length >= 3 ? 10 : 0}%</p>
       <h4>
-        <strong>Total:$ {adoptBirdTotal}</strong>
+        <strong>Total: ${adoptBirdTotal}</strong>
       </h4>
       <ol>
         {cart.map((bird) => {
