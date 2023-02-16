@@ -1,4 +1,4 @@
-// import "./App.css"
+import "./App.css"
 import { useState } from "react";
 import Card from "./components/Card";
 import Cart from "./components/Cart";

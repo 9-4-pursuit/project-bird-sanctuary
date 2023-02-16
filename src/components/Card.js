@@ -6,7 +6,7 @@ import React from "react";
 //Each bird card has an `Adopt` button
 //The button text should be: `Adopt`
 
-function Card({ birds, setBirds }) { //({birdData, handleCart})
+function Card({ birds, setBirds, handleCart }) { //({birdData, handleCart})
     // const [ birds, setBirds ] = useState([]);
     function birdCart() {
         setBirds([...birds, birdData])
@@ -23,7 +23,7 @@ function Card({ birds, setBirds }) { //({birdData, handleCart})
                         <h3>{bird.name}</h3>
                         <p>Price: ${bird.amount}</p>
                         <img src={bird.img} width={250} height={200} alt="bird-img" className="img"></img>
-                        <button className="adopt-button" onClick={() => handleCart(bird)} >
+                        <button className="birds button" onClick={() => handleCart(bird)} >
                         Adopt
                         </button>
                         </li>
@@ -44,7 +44,7 @@ function Card({ birds, setBirds }) { //({birdData, handleCart})
         //      </div>
         // })}
         // </div>
-    )
+    );
 }
 
 export default Card;

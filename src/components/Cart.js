@@ -1,4 +1,5 @@
-import React from "react";
+import birdData from "../data/birds";
+import bonusItems from "../data/bonusItems";
 
 //The cart has a class name of `Cart`
 //When I click on a bird card's adopt button
@@ -11,26 +12,30 @@ import React from "react";
 
 function Cart({birdCart, bonusItems, total, handleRemove}) {
 
-
     return (
         <div className="Cart">
             <h2>Cart</h2>
             <p>Discount: ({birdCart.length >= 3 ? 10 : 0})%</p>
             <h4>Total: ${birdCart.length >=3 ? total * 0.9 : total}</h4>
+            
+        <ol>
+        {birdCart.map((bird) => {
 
-        {birdCart.map((bird) => (
-            <li key={bird.id}> {bird.name}: {bird.amount}
-            <button key={bird.id} onClick={() => handleRemove(bird.id)}></button>
+            return (
+            <li key={bird.id}> 
+            {bird.name}: ${bird.amount}
+            <button onClick={() => handleRemove(bird.id)}>Remove Me</button>
             </li>
-        )
-        )}
-
+            );
+        })}
+        </ol>
+        
         <p>Your donations have qualified you for the following items:</p>
             <ul>
-            {total >=100 ? <li>{bonusItems[0]}</li> : null}
-            {total >=300 ? <li>{bonusItems[(0, 1)]}</li> : null}
-            {total >=500 ? <li>{bonusItems[(0, 1, 2)]}</li> : null}
-            {total >=1000 ? <li>{bonusItems[(0, 1, 2, 3)]}</li> : null}
+            {total >= 100 ? <li>{bonusItems[0]}</li> : null}
+            {total >= 300 ? <li>{bonusItems[(0, 1)]}</li> : null}
+            {total >= 500 ? <li>{bonusItems[(0, 1, 2)]}</li> : null}
+            {total >= 1000 ? <li>{bonusItems[(0, 1, 2, 3)]}</li> : null}
             </ul>
         </div>
     );
