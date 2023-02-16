@@ -1,0 +1,52 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    background-color: cyan;
+}
+
+.birds {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column-start: 2;
+    justify-content: center;
+}
+
+.checkout {
+    grid-column-start: 1;
+    text-align: center;
+    border: ridge;
+}
+
+section {
+    display: flex;
+    text-align: center;
+}
+
+.img {
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    border: ridge;
+}
+
+.card {
+    width: 260px;
+    height: 360px;
+    background-color: green;
+    box-sizing: border-box;
+    display: flexbox;
+}
+
+.card button {
+    background-color: cadetblue;
+}
+
+h3 {
+    font-size: large;
+}
+
+button {
+    margin: 10px;
+    border: solid black;
+    color: rgb(219, 239, 232);
+}
