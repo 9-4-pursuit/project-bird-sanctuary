@@ -10,7 +10,7 @@ import bonusItems from "./data/bonusItems"
 function App () {
   const[birds, setBird] = useState(birdData)
   const[cart, setCart] = useState([])
-  const[cartTotal, setcartTotal] = useState(0)
+  const[cartTotal, setCartTotal] = useState(0)
   const[discount, setDiscount] = useState(0)
   const[bonus, setBonus] = useState([])
   // state that handles putting the bird in the cart
@@ -18,20 +18,26 @@ function App () {
 
   function handleAdopt(bird) {
 
+    if (cart.includes(bird)) {
+      bird = {...bird, id: parseInt(`${bird.id}${cart.length}`)}
+    }
+
     setCart([...cart, bird])
-    setcartTotal(cartTotal + bird.amount)
+    setCartTotal(cartTotal + bird.amount)
     if(cart.length + 1 >= 3) {
       setDiscount(10)
     }
-
-
+    // we need to update the cartTotal 
+    handleBonus(cartTotal + bird.amount) 
   }
 
   function handleDelete(bird) {
     const deleteItem = cart.filter((item) => bird.id !== item.id)
     setCart(deleteItem)
-    setcartTotal(cartTotal - bird.amount)
-
+    //removes amount of bird from the totL
+    setCartTotal(cartTotal - bird.amount)
+    // deletes the linpm test
+    handleBonus(cartTotal - bird.amount)
     if(cart.length < 4){
       setDiscount(0)
     }
@@ -39,16 +45,42 @@ function App () {
 
   function handleBonus(cartTotal) {
 
-    if(cartTotal > 100 && cartTotal < 300){
-      setBonus(bonusItems[0])
-    }else if(cartTotal > 300 && cartTotal < 500) {
-      setBonus(bonusItems[0,1])
+    console.log([bonusItems[0],bonusItems[1]])
 
-    }else if(cartTotal > 500 && cartTotal < 1000){
+    if(cartTotal >= 100 && cartTotal < 300){
+      setBonus([bonusItems[0]])
+    }else if(cartTotal >= 300 && cartTotal < 500) {
+      // setBonus([bonusItems[0,1]])
+      
+      setBonus([bonusItems[0],bonusItems[1]])
+
+    }else if(cartTotal >= 500 && cartTotal < 1000){
+      setBonus([bonusItems[0],bonusItems[1],bonusItems[2]])
+
+    }else if(cartTotal >= 1000) {
       setBonus(bonusItems)
+    }else {
+      setBonus([])
     }
     
   }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    setCart([])
+    setDiscount(0)
+    setCartTotal(0)
+    setBonus([])
+    alert("You have adopted birds. Thank you!")
+
+  }
+
+
+
+
+
+
+
 
 
 
@@ -80,9 +112,7 @@ function App () {
       // handleAdopt={handleAdopt}
       cartTotal={cartTotal}
       discount={discount}
-      handleBonus={handleBonus}
-
-
+      bonus={bonus}
        />
 
       {/* <BirdCards name='name' price="amount" /> */}
@@ -91,7 +121,8 @@ function App () {
       // passing the function  handleAdopt & birdData into the component BirdCards
       handleAdopt={handleAdopt}/>
 
-      <Checkout />
+      <Checkout
+      handleSubmit={handleSubmit} />
 
     </div>
   );

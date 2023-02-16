@@ -1,17 +1,18 @@
-function Checkout() {
+function Checkout({handleSubmit}) {
     return (
         <div className="form">
             <h2>Checkout</h2>
-            <form>
+            <form className="Checkout">
                 <label htmlFor="firstname">First Name</label>
-                <input type="text"/>
+                <input id="firstname" type="text"/>
                 <label htmlFor="lastname">Last Name</label>
-                <input type="text"/>
+                <input id="lastname" type="text"/>
                 <label htmlFor="email">Email</label>
-                <input type="email"/>
+                <input id="email" type="email"/>
                 <label htmlFor="zipcode">Zip Code</label>
-                <input type="number"/>
-                <button type="submit">Submit</button>
+                <input id="zipcode" type="number"/>
+                {/* <input onClick={handleSubmit} type="submit">Submit</input> */}
+                <input onClick={handleSubmit} type="submit" value="Submit" ></input>
  
             </form>
 
