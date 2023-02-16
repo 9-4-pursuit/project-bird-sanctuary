@@ -1,0 +1,67 @@
+.App {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+  background-color: darkolivegreen;
+}
+.card {
+    border: solid black 2px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* justify-items: center; */
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: palegoldenrod;
+    box-shadow:1px 1px 1px rgba(0,0,0,0.12), 
+    2px 2px 2px rgba(0,0,0,0.12), 
+    4px 4px 4px rgba(0,0,0,0.12), 
+    8px 8px 8px rgba(0,0,0,0.12),
+    16px 16px 16px rgba(0,0,0,0.12);
+}
+.birds {
+
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+}
+.birds button {
+    display: flex;
+    flex-direction: column;
+    margin: 100;
+    justify-content: center;
+    
+}
+img {
+    border: solid black 5px; 
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+.Cart {
+    border: solid black 2px;
+    padding: 10px;
+    background-color: palegoldenrod;
+    box-shadow:1px 1px 1px rgba(0,0,0,0.12), 
+    2px 2px 2px rgba(0,0,0,0.12), 
+    4px 4px 4px rgba(0,0,0,0.12), 
+    8px 8px 8px rgba(0,0,0,0.12),
+    16px 16px 16px rgba(0,0,0,0.12);
+}
+.Checkout
+{
+    border: solid black 2px;
+    padding: 50px;
+    margin: 20px;
+    background-color: palegoldenrod;
+    box-shadow:1px 1px 1px rgba(0,0,0,0.12), 
+    2px 2px 2px rgba(0,0,0,0.12), 
+    4px 4px 4px rgba(0,0,0,0.12), 
+    8px 8px 8px rgba(0,0,0,0.12),
+    16px 16px 16px rgba(0,0,0,0.12);
+}
