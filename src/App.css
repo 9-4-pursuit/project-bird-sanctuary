@@ -1,0 +1,15 @@
+.card {
+    background-color: aqua;
+}
+
+/* dot notation for classNames */
+.cart {
+    font-style: italic;
+    font-weight: bolder;
+}
+
+/* hashtags for html id's */
+#birdCard {
+    font-style: italic;
+}
+
