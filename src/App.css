@@ -1,3 +1,18 @@
+ .Checkout .submit{
+  background-color: white;
+  font-weight: bolder;
+ }
+
+ 
+.Cart .Bonus{
+  display: flex; 
+  flex-wrap: wrap;
+}
+.Checkout button {
+  background-color: white;
+  font-weight: bolder;
+  
+}
 .birds img {
     width: 300px;
     height: 300px;
@@ -25,10 +40,27 @@
   background-color: aliceblue;
 }
 
+.birds button:hover {
+  background-color: aliceblue;
+  border-color: blue;
+  transform: scale(1.2);
+}
+
+.button {
+  background-color: aliceblue;
+}
+
+.button:hover {
+  background-color: aliceblue;
+  border-color: red;
+  transform: scale(1.2)
+}
+
 .App{
   display: grid ;
   grid-template-columns: 2fr 4fr;
   margin-top: 50px;
+  background-color: silver;
 }
 .App h1{
     font-family: cursive;
@@ -62,7 +94,7 @@
     text-align: center;
     padding: 10px;
     width: 300px;
-    height: 500px;
+    height: fit-content;
     margin-bottom: 50px;
     background-color: aquamarine;
     box-shadow:1px 1px 1px rgba(0,0,0,0.12), 
@@ -73,7 +105,7 @@
 
 }
 
-.Cart{
+/* .Cart{
     border: solid 2px gray;
     font-size: 20px;
     text-align: center;
@@ -88,4 +120,4 @@
   8px 8px 8px rgba(0,0,0,0.12),
   16px 16px 16px rgba(0,0,0,0.12);
 
-}
+} */
