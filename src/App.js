@@ -33,7 +33,7 @@ function App () {
         ? bonusItems.slice(0, 3) 
         : bonusItems
     );
-  },[cart, total]
+  }, [cart, total]
   );
   
   const addToCart = (bird) => {

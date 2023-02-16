@@ -23,8 +23,7 @@ const Cart = ({ cart, discount, total, bonus, setTotal }) => {
         <ol>
         {cart.map((bird) => (
             <li>
-            <p>{bird.name}    </p>
-            <p>${bird.amount}</p>
+            <p>{bird.name}  ${bird.amount}  </p>
             <button onClick={(event) => deleteBird(event, bird)}>Delete</button>
             </li>
         ))}
