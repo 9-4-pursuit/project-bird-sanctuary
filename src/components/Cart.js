@@ -1,4 +1,3 @@
-import birdData from "../data/birds";
 import bonusItems from "../data/bonusItems";
 
 //The cart has a class name of `Cart`
@@ -10,13 +9,13 @@ import bonusItems from "../data/bonusItems";
 // When there are 3 or more birds in the cart there is a 10% discount
 //let elem = birds.elem((a, b) => {return b.amount + a}, 0)
 
-function Cart({birdCart, bonusItems, total, handleRemove}) {
+function Cart({birdCart, total, handleRemove}) {
 
     return (
         <div className="Cart">
-            <h2>Cart</h2>
+            <h4>Cart</h4>
             <p>Discount: ({birdCart.length >= 3 ? 10 : 0})%</p>
-            <h4>Total: ${birdCart.length >=3 ? total * 0.9 : total}</h4>
+            <h2>Total: ${birdCart.length >=3 ? total * 0.9 : total}</h2>
             
         <ol>
         {birdCart.map((bird) => {
@@ -29,7 +28,7 @@ function Cart({birdCart, bonusItems, total, handleRemove}) {
             );
         })}
         </ol>
-        
+
         <p>Your donations have qualified you for the following items:</p>
             <ul>
             {total >= 100 ? <li>{bonusItems[0]}</li> : null}

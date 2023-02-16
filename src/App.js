@@ -8,7 +8,7 @@ import bonusItems from "./data/bonusItems";
 
 
 function App () {
-  const [ birds, setBirds ] = useState(birdData);
+  const [ birds, setBirds ] = useState([]);
   const [ birdCart, setBirdCart ] = useState([]);
 
 function handleRemove(id) {
@@ -32,13 +32,13 @@ const total = birdCart.reduce((a, b) => {
 
 
   return (
-    <div className="App">
+    <div className="main">
 
-      <aside>
+      <div>
       <Cart birdCart={ birdCart } total={ total } bonusItems={ bonusItems } handleRemove={handleRemove}/>
       <Checkout />
-      </aside>
-      <Card birds={ Card } 
+      </div>
+      <Card birds={ Card }
       handleCart={ handleCart } 
       />
     </div>

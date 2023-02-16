@@ -1,5 +1,3 @@
-import React from "react";
-
 // I can complete the inputs in the checkout form.
 // When I complete the form with valid input and click `Submit`, an alert tells me the purchase was successful.
 // Alert text should include: `You have adopted birds. Thank you!`
@@ -27,7 +25,7 @@ function Checkout() {
                 <label htmlFor="zip">Zipcode: </label>
                 <input type="number" id="zip" />
 
-                <button>Submit</button>
+                <button className="submit-button">Submit</button>
             </form>
         </aside>
     );

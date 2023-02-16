@@ -1,4 +1,35 @@
-main {
-    margin: 25px auto;
-    width: 50%;
+.main {
+  background-color: rgb(238, 167, 144);
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
   }
+
+.card {
+  display: grid;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  margin: 20px;
+  padding: 30px;
+}
+
+.birdCard {
+  display: grid;
+  border-style: solid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: 2/4;
+  column-gap: 10px;
+  row-gap: 10px;
+  background-color:antiquewhite;
+}
+
+.Cart {
+  display: grid;
+  grid-template-columns: 300px;
+  background-color:antiquewhite;
+}
+
+.birds-button, .submit-button {
+  background-color: white;
+  justify-items: center;
+  align-items: center;
+}

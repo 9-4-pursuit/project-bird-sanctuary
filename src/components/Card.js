@@ -1,5 +1,4 @@
 import birdData from "../data/birds";
-import React from "react";
 
 //Each bird card displays the name, image, and amount (price)
 //Each bird card has a `class` name of `card`
@@ -23,7 +22,7 @@ function Card({ birds, setBirds, handleCart }) { //({birdData, handleCart})
                         <h3>{bird.name}</h3>
                         <p>Price: ${bird.amount}</p>
                         <img src={bird.img} width={250} height={200} alt="bird-img" className="img"></img>
-                        <button className="birds button" onClick={() => handleCart(bird)} >
+                        <button className="birds-button" onClick={() => handleCart(bird)}>
                         Adopt
                         </button>
                         </li>
@@ -32,18 +31,6 @@ function Card({ birds, setBirds, handleCart }) { //({birdData, handleCart})
             })}
             </ul>
         </div>
-        // <div className='card'>
-        // {birdData.map((bird) => {
-        
-        //     return <div className='birdCard'>
-        //      <h3>{bird.name}</h3>
-        //      <h3>${bird.amount}</h3>
-        //      <img src={bird.img} width={350} height={300} alt="bird-img" className="img"></img>
-        //      <button>Adopt</button>
-             
-        //      </div>
-        // })}
-        // </div>
     );
 }
 
