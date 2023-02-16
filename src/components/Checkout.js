@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 
 // I can complete the inputs in the checkout form.
 // When I complete the form with valid input and click `Submit`, an alert tells me the purchase was successful.
@@ -6,13 +6,31 @@ import { useState } from "react";
 // When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
 function Checkout() {
-
+    const submitForm = (e) => {
+        e.preventDefault()
+        alert("You have adopted birds. Thank you!")
+        document.querySelector("form").reset()
+    }
 
     return (
-        <div>
-            <h3>This is the Checkout</h3>
-        </div>
-    )
+        <aside className="Checkout">
+            <form onSubmit={submitForm}>
+                <label htmlFor="fName">First Name: </label>
+                <input type="text" id="fName" />
+
+                <label htmlFor="lName">Last Name: </label>
+                <input type="text" id="lName" />
+
+                <label htmlFor="email">Email: </label>
+                <input type="email" id="email" />
+
+                <label htmlFor="zip">Zipcode: </label>
+                <input type="number" id="zip" />
+
+                <button>Submit</button>
+            </form>
+        </aside>
+    );
 }
 
 
