@@ -8,11 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     grid-column-start: 2;
+    justify-content: center;
 }
 
 .checkout {
     grid-column-start: 1;
     text-align: center;
+    border: ridge;
 }
 
 section {
@@ -28,9 +30,15 @@ section {
 }
 
 .card {
-    width: 350px;
-    height: 350px;
-    background-color: darkgreen;
+    width: 260px;
+    height: 360px;
+    background-color: green;
+    box-sizing: border-box;
+    display: flexbox;
+}
+
+.card button {
+    background-color: cadetblue;
 }
 
 h3 {
@@ -40,5 +48,5 @@ h3 {
 button {
     margin: 10px;
     border: solid black;
-    color: aquamarine;
+    color: rgb(219, 239, 232);
 }

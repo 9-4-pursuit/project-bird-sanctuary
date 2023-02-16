@@ -27,7 +27,6 @@ function App() {
         cartData={cartData}
         setCartData={setCartData}
       />
-
     </div>
 
   );
