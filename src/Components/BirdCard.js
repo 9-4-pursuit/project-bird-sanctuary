@@ -1,4 +1,4 @@
-import Birds from "./Birds";
+import Birds from "./Birds.js";
 
 function Birdcard(props) {
   let { birds, cart, setCart } = props;
