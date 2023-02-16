@@ -1,0 +1,43 @@
+
+.app {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
+.card
+ {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    flex-wrap: nowrap;
+    width: 30%;
+    font-size: small;
+    margin: 50px;
+    
+}
+
+.bird-card {
+list-style: none;
+border: 3px solid red;
+text-align: center;
+background-color: aqua;
+width: 100%;
+justify-content: center;
+}
+
+img {
+    width: 30%;
+}
+.bird-card p{
+    font-size: large;
+}
+
+form {
+    border: 3px solid red;
+}
+
+.cart {
+    border: 3px solid red;
+}
