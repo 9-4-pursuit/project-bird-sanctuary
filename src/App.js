@@ -38,7 +38,7 @@ function App() {
   }
   function handleSubmit(event){
     event.preventDefault();
-    alert("You have adopted birds. Thank you!")
+    alert("You have adopted birds. Thank you!");
     cartReset()
   }
   const cartReset = () => {
@@ -76,7 +76,7 @@ function App() {
         </div>
         <div className="Checkout">
           <Checkout
-           handleDelete={handleSubmit} />
+           handleSubmit={handleSubmit} />
         </div>
       </div>
     </div>

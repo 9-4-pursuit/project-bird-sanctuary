@@ -1,8 +1,8 @@
 import React from "react";
-function Checkout() {
+function Checkout(props) {
   return (
     <div className="Checkout">
-      <form>
+      <form className="Checkout" onSubmit={(event) => props.handleSubmit(event)}>
         <label htmlFor="firstname">
           First Name <br></br>
           <input type="text" />
