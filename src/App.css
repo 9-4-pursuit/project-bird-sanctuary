@@ -1,0 +1,57 @@
+.app {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: beige;
+    margin: 1%;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    justify-content: center;
+    grid-gap: 30px;
+    background-color: beige;
+    margin: 30px;
+    
+}
+
+.Cart{
+    border: 3px solid forestgreen;
+    text-align: center;
+    justify-content: center;
+    
+    
+    
+}
+form {
+    border: 3px solid forestgreen;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+
+
+.img {
+    width: 150px;
+    height: 150px;
+    /* box-shadow:1px 1px 1px rgba(0,0,0,0.12), 
+  2px 2px 2px rgba(0,0,0,0.12), 
+  4px 4px 4px rgba(0,0,0,0.12), 
+  8px 8px 8px rgba(0,0,0,0.12),
+  16px 16px 16px rgba(0,0,0,0.12) */
+}
+
+.birds {
+    list-style: none;
+    width: 100%;
+    border: 10px solid greenyellow;
+    background-color: forestgreen;
+}
+
+button {
+    background-color: greenyellow;
+    justify-content: center;
+}
