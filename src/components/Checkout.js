@@ -1,19 +1,19 @@
-
-function Checkout () {
+// when destructuring props 
+function Checkout ({setCart, setCartTotal, setBonus, setDiscount,  handleSubmit}) {
     return (
       <>
       <div >
-    <form className="form">
+    <form className="Checkout">
         <label htmlFor="firstname">First Name</label>
-        <input type="text"/>
+        <input id="firstname" type="text"/>
         <label htmlFor="lastname">Last Name</label>
-        <input type="text"/>
+        <input id="lastname" type="text"/>
         <label htmlFor="email">Email</label>
-        <input type="email"/>
+        <input id="email" type="email"/>
         <label htmlFor="zipcode">Zip Code</label>
-        <input type="number"/>
+        <input id="zipcode" type="number"/>
         <br></br>
-        <input className="button" type="submit" value="Submit" />
+        <input onClick={handleSubmit}  className="button" type="submit" value="Submit"/>
     </form>
       </div>
       </>

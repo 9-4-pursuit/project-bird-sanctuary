@@ -1,12 +1,12 @@
 
 import Checkout from './Checkout'
 
-function Cart ({cart, cartTotal, discount, handleDeletion, bonus}) {
+function Cart ({cart, cartTotal, discount, handleDeletion, bonus, handleSubmit}) {
     return (
       <div className = "purchase">
       <div className ="Cart">
         <h4>Cart</h4>
-        <p>Discount:{discount}%
+        <p className="bonus">Discount: {discount}%
         </p>
         <h4><strong>Total: ${cartTotal}</strong></h4>
         <ol>
@@ -37,7 +37,7 @@ function Cart ({cart, cartTotal, discount, handleDeletion, bonus}) {
       <br></br>
       <br></br>
       <br></br>
-      <Checkout />
+      <Checkout  handleSubmit={handleSubmit}/>
       </div>
     );
   };

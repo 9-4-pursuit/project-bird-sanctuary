@@ -19,7 +19,10 @@
   /* width: 400px;
     height: 700px */
 }
-
+.bonus {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
+}
 .purchase h4 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
