@@ -1,6 +1,6 @@
 
 
-function Cart({cart, cartTotal, discount}) {
+function Cart({cart, cartTotal, discount, handleDelete}) {
 
 
     return (
@@ -14,7 +14,7 @@ function Cart({cart, cartTotal, discount}) {
                     return (
                         <li key={item.id}>
                             {item.name} ${item.amount}.00
-                            <button>Delete</button>
+                            <button onClick={() => handleDelete(item)}>Delete</button>
                         </li>
                     )
                 })
@@ -22,6 +22,11 @@ function Cart({cart, cartTotal, discount}) {
             </ol>
 
             <p>Your donations has qualified you for the following items</p>
+            <ul>
+
+
+
+            </ul>
 
         </div>
     )
