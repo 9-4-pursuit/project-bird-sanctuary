@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Cart from "./components/Cart.js";
-import BirdCards from "./components/Birdcard";
+import Birdcard from "./components/Birdcard";
 import Checkout from "./components/Checkout";
 import birdData from "./data/birds";
 import bonusItems from "./data/bonusItems";
@@ -24,7 +24,7 @@ function App() {
 	      setCart={setCart}
 	      />
 </section>
-      <BirdCards 
+      <Birdcard 
 	      setCart={setCart} 
 	      cart={cart} 
 	      birds={birdData}
