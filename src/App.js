@@ -1,7 +1,7 @@
 import { useState } from "react";
 import birdData from "./data/birds";
 import BirdCards from "./components/BirdCards";
-// import bonusItems from './data/bonusItems';
+import bonusItems from './data/bonusItems';
 import Cart from "./components/Cart";
 // import Checkout from './components/Checkout'
 import "./App.css";
@@ -11,13 +11,13 @@ function App() {
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [bonusItems, setBonusItems] = useState([])
+  const [bonus, setBonus] = useState([])
 
   // ADOPT A BIRD HERE AND SEND DOWN TO BIRDCARDS
   //use a nameless function? ---> click on adopt and add one thing to collect the
   //DO YOU WANT TO LIFT STATE AND USE CONDITIONS ON CLICK TO HIDE ADOPT BUTTON
 
-  function handleDeletion(bird) {
+  function handleDeletion(bird, amount) {
     const deleteItem = cart.filter((item) => bird.id !== item.id);
     setCart(deleteItem);
     setCartTotal(cartTotal - bird.amount);
@@ -25,24 +25,30 @@ function App() {
     if (cart.length < 4) {
       setDiscount(0)
     }
+    
+    applySetBonus(cartTotal - bird.amount)      
   }
   // how do we assign the discount to the cart 
 // 100-300 = stickers || 
 // 300-500 = background || 
 // 500-1000 = tote bags || 
 // 1000 + = Invites to livestream
-// if the cart total is ...add the bonus item as a string with an li
+// if the cart total is ...add the setBonus item as a string with an li
 
-  // function applyBonus(bird){
-  //   if (cartTotal <= 100) {
-  //     bonusItem[0]
-  //   } else if (cartTotal >= 300){
-  //     bonusItem[1]
-  //   } else if (cartTotal >= 500){
-  //     bonustItem[2]
-  //   } else (cartTotal )
-  // }
-
+  function applySetBonus(amount){
+    console.log(amount)
+    if (amount >= 1000) {
+       setBonus(bonusItems)
+     } else if (amount <= 1000 && amount > 500){
+       setBonus([bonusItems[0], bonusItems[1], bonusItems[2]])
+     } else if (amount <= 500 && amount > 300){
+       setBonus([bonusItems[0],bonusItems[1]])
+     } else if (amount <= 300 && amount >= 100){
+       setBonus([bonusItems[0]])
+     } else if (amount = 0) {
+      setBonus([])
+     }
+  }
 
   function handleAdopt(bird) {
     if (cart.includes(bird)) {
@@ -54,7 +60,9 @@ function App() {
     setCartTotal(cartTotal + bird.amount);
     if (cart.length >= 2) {
       setDiscount(10);
-    }        
+    } 
+    //pass in an argument for cart and birdamount
+    applySetBonus(cartTotal + bird.amount)       
   }
         // } else (cart.length < 3)
       //once we delete how do we set it back to 0? ---> place this on the onDelete function.
@@ -72,7 +80,7 @@ function App() {
         birds={birds}
         discount={discount}
         handleDeletion={handleDeletion}
-        //bonusItems={bonusItems}
+        bonus={bonus}
       />
 
       <BirdCards
