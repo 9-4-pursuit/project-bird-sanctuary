@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart.js";
 import BirdCards from "./components/Birdcard";
 import Checkout from "./components/Checkout";
 import birdData from "./data/birds";

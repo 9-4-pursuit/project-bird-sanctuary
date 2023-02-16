@@ -1,3 +1,6 @@
+import { useState } from "react";
+import bonusItems from "../data/bonusItems";
+
 function Cart(props) {
   let { cart, bonusItems } = props;
   
