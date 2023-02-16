@@ -9,7 +9,7 @@ const BirdCard = ({ bird }) => {
     if (birdExist) {
       return alert("You have already added this bird to the cart");
     } else {
-      setBirds([...birds, { ...item, name: item.name, amount: item.amount }]);
+      setBirds([...birds, { ...item }]);
     }
   };
 
