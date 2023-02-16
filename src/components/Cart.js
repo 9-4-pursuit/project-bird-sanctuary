@@ -1,28 +1,35 @@
 import React from "react";
-import { v1 as generateUniqueID } from "uuid";
 
-function Cart({ cart, setCart }) {
-    function removeFromCart(event) {
-        setCart(prevCart => {
-          const newCart = prevCart.filter(bird => bird !== event);
-          setCart(newCart);
-        });
+function Cart({ cart, total, discount, bonus, setTotal }) {
+
+
+    function removeFromCart(event, bird) {
+          event.target.parentNode.remove()
+          setTotal(total- bird.amount)
     }
+
+   
 
   return (
     <>
       <div className="Cart">
         <h1>Cart</h1>
-        <h4>Discount: </h4>
-        <h4>$total</h4> 
+        <h3>Discount: {discount}%</h3>
+        <h4>Total: ${total}</h4> 
         <ol>
         {cart.map((bird, index) => (
           <li>
             <p>{bird.name}: ${bird.amount}</p>
-            <button key={bird.id} onClick={() => removeFromCart(bird)}>Remove from cart</button>
+            <button key={bird.id} onClick={(event) => removeFromCart(event, bird)}>Remove from cart</button>
           </li> 
         ))}
         </ol>
+        <p>Your donation has qualified you for the following items:</p>
+        <ul>
+        {bonus.map((item, index) => (
+          <li>{item}</li> 
+        ))}
+        </ul>
       </div>
     </>
   );

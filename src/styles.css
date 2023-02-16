@@ -1,3 +1,8 @@
+body {
+    display: grid;
+    columns: 1fr 1fr;
+}
+
 img {
     width: 200px;
 }
@@ -9,5 +14,13 @@ img {
 
 .birds {
     display: grid;
-    columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div {
+    margin-left: 30px;
+}
+
+.cart {
+    float: left;
 }
