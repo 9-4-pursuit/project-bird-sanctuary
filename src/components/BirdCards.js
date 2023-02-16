@@ -3,7 +3,7 @@ function BirdCards({handleAdopt, birdData}) {
   return (
     <div className="card">
       
-        {birdData.map((bird) => {
+        {birdData.map((bird, i) => {
           return (
             <div key={bird.id} className="birds">
                 <li className="cards" key={bird.id}>
@@ -15,7 +15,7 @@ function BirdCards({handleAdopt, birdData}) {
                   <br></br>
                   {/* PLEASE ADD A BUTTON BELOW TO SEND DOWN THE CALLBACK FUNCTION 
                   TO ADOPT BIRD AND ADD THE TEMPLATE TO CART */}
-                  <button onClick={() => handleAdopt(bird,)}>Adopt Me</button>
+                  <button onClick={() => handleAdopt(bird, i)}>Adopt Me</button>
                 </li>
               </div>
           );

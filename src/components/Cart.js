@@ -1,7 +1,7 @@
 
 import Checkout from './Checkout'
 
-function Cart ({cart, cartTotal, discount}) {
+function Cart ({cart, cartTotal, discount, handleDeletion}) {
     return (
       <div className = "purchase">
       <div className ="Cart">
@@ -17,16 +17,14 @@ function Cart ({cart, cartTotal, discount}) {
               <li key={item.id}>
                 {item.name} ${item.amount}.00
                 {/* USE A CALLBACK TO DELETE THE BIRD OUT OF CART */}
-                <button>Delete</button>
+                <button onClick={() => handleDeletion(item)}>Delete</button>
               </li>
             )
           })
         }
         </ol>
         <p>Your donations has qualifed you for the following items:</p>
-        {/* how do we assign the discount to the cart 
-            100-300 = stickers \\  300-500 = background || 500-1000 = tote bags || 1000 + = Invites to livestream
-              */}
+        <ul></ul>
       </div>
       <br></br>
       <br></br>

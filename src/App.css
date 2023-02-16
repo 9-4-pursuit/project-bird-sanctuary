@@ -1,10 +1,14 @@
 .app {
     display: grid;
     grid-template-columns: "purchase cards";
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin: 1%;
 }
+
+.app h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
 /* body {
     background-color: black;
     display: grid;
@@ -13,9 +17,16 @@
 
 .purchase {
     display: grid;
-    grid-area: "purchase";
-    border: 10px dotted bisque;
+    grid-area: "purchase ";
+    border: 10px solid rgb(86, 81, 77);
+    background-color: rgb(105, 149, 114);
     text-align: center;
+    /* width: 400px;
+    height: 700px */
+}
+
+.purchase h4 {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 /* .cart {
@@ -32,6 +43,8 @@
     grid-gap: 20px;
     justify-content: center;
     text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out
     }
 
 /* .form {
@@ -43,18 +56,19 @@
 
 
 .cards {
-    background-color: rgb(94, 178, 187);
+    background-color: rgb(110, 203, 158);
     list-style: none;
     width: 100%;
     margin: 20px;
-    border: 5px dashed bisque;
+    border: 5px solid bisque;
     justify-content: center;
     text-align: center;
+    
 }
 
 .img {
-    width: 30%;
-    height: 100%
+    width: 300px;
+    height: 300px
     }
 
 .button {
