@@ -1,21 +1,10 @@
-.form {
-    border: blue;
-}
-
 .container {
     display: grid;
     grid-template-columns: 2fr 4fr;
+    background-color: cyan;
 }
 
-.birdContainer {
-
-}
-
-.birdcard {
-    width: 100%;
-}
-
-.bird {
+.birds {
     display: flex;
     flex-wrap: wrap;
     grid-column-start: 2;
@@ -23,27 +12,33 @@
 
 .checkout {
     grid-column-start: 1;
+    text-align: center;
 }
 
 section {
     display: flex;
+    text-align: center;
 }
 
 .img {
     width: 250px;
     height: 200px;
     text-align: center;
+    border: ridge;
 }
 
-section {
-    width: 30px;
+.card {
+    width: 350px;
+    height: 350px;
+    background-color: darkgreen;
 }
 
 h3 {
-    text-align: left;
-    font: 100;
+    font-size: large;
 }
 
-.checkout {
-    border: blue;
+button {
+    margin: 10px;
+    border: solid black;
+    color: aquamarine;
 }

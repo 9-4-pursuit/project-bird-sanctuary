@@ -1,5 +1,5 @@
 import React from 'react';
-import "./BirdCard.css";
+// import "./BirdCard.css";
 function BirdCard({ birdData, cartData, setCartData }) {
 
     const birds = birdData.map(({ name, id, amount, img }) => {

@@ -26,8 +26,8 @@ function Checkout({ setCartData }) {
         setZipCode(value);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (cart) => {
+        cart.preventDefault();
         alert('You have adopted birds. Thank you!');
         setCartData([]);
         setFirstName("");
