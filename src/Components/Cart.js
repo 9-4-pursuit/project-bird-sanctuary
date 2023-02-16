@@ -2,78 +2,54 @@
 // import "./App.css";
 //import styles from './App.css'
 
-function Cart() {
 
-  // const{ birds, total, discount } = cart;
-
-const cart = {
-  birds:[],
-  total: 0,
-  discount: 0,
-  bonuses:[],
-}
-
-
-  // const cart = JSON.parse(localStorage.getItem("cart")) || {
-  //   birds:[],
-  //   total: 0,
-  //   discount: 0,
-  //   bonuses:[],
-  // };
-
-  
-  // const [total, setTotal] = 0;
-
-  // let discount = 0;
-  // const totalCost = 0;
-  // const bonuses = "";
-  // const birdsInCart = 0;
-
-  // switch (birdsInCart) {
-  //   case 0:
-  //   case 1:
-  //   case 2:
-  //     console.log("One bird");
-  //     discount = 0;
-  //     break;
-  //   default:
-  //     console.log("default number of birds");
-  // }
+function Cart(props) {
+  const { cart, setCart } = props
 
   return (
     <div className="Cart">
       <h3>Your cart</h3>
       <ol>
-        {cart.birds.map((bird) => (
-          <li>{bird.name}</li>
+        {cart.map((bird) => (
+          <li key={bird.id}>{bird.name}</li>
         ))}
       </ol>
 
-      <p> Discount: <span id="discount-amount">{cart.discount}%</span> </p>
+      <p> Discount: <span id="discount-amount">{}%</span> </p>
 
       <h4>
-        Total: $<span>{cart.total}</span>
+        Total: $<span>{}</span>
       </h4>
 
       <button
           className="clear-cart"
           onClick={() => {
-            localStorage.removeItem("cart");
+            setCart({
+              birds: [],
+              total: 0,
+              discount: 0,
+              bonuses: []
+            });
           }}
-          >
-            Clear cart
-          </button>
+         >
+          Clear cart
+      </button>
 
       <button 
         className="submit" 
         content="Submit"
         onClick={() => {
           alert("You have adopted birds. Thank you!");
-          localStorage.removeItem("cart");
+          setCart({
+            birds: [],
+            total: 0,
+            discount: 0,
+            bonuses: []
+          });
         }}
-        >
-          Submit
-        </button>
+      >
+        Submit
+      </button>
       <p className="success-alert" id="success-alert"></p>
 
 
@@ -112,3 +88,47 @@ export default Cart;
 //
 
 //  <h4>Total: <span>`${totalCost}</span></h4>
+
+
+
+
+/*
+
+  // const{ birds, total, discount } = cart;
+
+const cart = {
+  birds:[],
+  total: 0,
+  discount: 0,
+  bonuses:[],
+}
+
+
+  // const cart = JSON.parse(localStorage.getItem("cart")) || {
+  //   birds:[],
+  //   total: 0,
+  //   discount: 0,
+  //   bonuses:[],
+  // };
+
+  
+  // const [total, setTotal] = 0;
+
+  // let discount = 0;
+  // const totalCost = 0;
+  // const bonuses = "";
+  // const birdsInCart = 0;
+
+  // switch (birdsInCart) {
+  //   case 0:
+  //   case 1:
+  //   case 2:
+  //     console.log("One bird");
+  //     discount = 0;
+  //     break;
+  //   default:
+  //     console.log("default number of birds");
+  // }
+
+
+*/

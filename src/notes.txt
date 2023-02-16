@@ -62,7 +62,7 @@
 
 
 
-
+///////////////////  BIRDLAYOUT ////////////////////
 Got rid of this in BirdLayout
 
         <BirdCard />
@@ -73,7 +73,36 @@ Got rid of this in BirdLayout
             <BirdCard />  
             <BirdCard /> */}
       </div>
+------// const BirdLayout = ({handleAdopt}) => {
+//   return (
+//     <section>
+//       {
+//         birdData.map((item)=> {
+//           <Cards item={item} handleAdopt={handleAdopt} />
+//         })
+//       }
+//     </section>
+//   )
+// }
 
+//  const data = props.birds;
+
+// <div className="layout">
+// {data && data.map((birdy, index) => {
+//     return <BirdCard birdy = {birdy} handleAdopt={props.handleAdopt} />
+// })
+
+/*
+<BirdCard birdy={bird} handleAdopt={() => handleAdopt(bird)} setCart={setCart} />
+
+
+     <section>
+       {birdData.map((item) => 
+      <Cards item={item} handleAdopt={handleAdopt} />
+         )}
+     </section>
+
+*/---------------------------------
 
 
 
@@ -226,3 +255,20 @@ export default Cart;
   //   default:
   //     console.log("default number of birds");
   // }
+
+
+
+
+  ////////////////// App dot js //////////////////////
+
+  /*
+      <BirdLayout>
+          {birdData.map((bird) =>
+          <BirdCard
+            key={bird.id}
+            birdy={bird}
+            handleAdopt={() => handleAdopt(bird)} />
+            )}
+        </BirdLayout>
+
+        */

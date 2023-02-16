@@ -1,8 +1,10 @@
 // import { useState } from "react";
 import React from "react";
 
+
 function BirdCard(props) {
 
+  //add guard clause so I won't get an undefined error
   if (!props.birdy) {
     return null;
   }
@@ -10,9 +12,7 @@ function BirdCard(props) {
   console.log(props.birdy.name);
   const { name, amount, id, img } = props.birdy;
 
-  function handleAdopt() {
-    console.log("Adopt button clicked");
-  }
+
 
 
   return (
@@ -24,7 +24,7 @@ function BirdCard(props) {
         <h2>{name}</h2>
         <p>Price: ${amount}</p>
         <p>id: {id}</p>
-        <button name="adopt" id="adopt" onClick={handleAdopt}>
+        <button name="adopt" id="adopt" onClick={() => props.handleAdopt(props.birdy)}>
         Adopt
         </button>
       </div>
