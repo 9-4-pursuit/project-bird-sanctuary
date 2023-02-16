@@ -1,25 +1,30 @@
 export default function BirdCards(props) {
-  const data = props.birdData;
-  const { name, amount, img } = data;
 
+  const data = props.birdData;
+  
   return (
     <div className="card">
-      <ul>
+      
         {data.map((bird) => {
+          
+          const { name, amount, img } = bird;
           return (
-            <div>
-              <li id={bird.id}>
-                <p>{bird.name}</p>
-                <p>Price: ${bird.amount}</p>
-                <img className="img" src={bird.img} alt="birdimage" />
+            <>
+            <div key={bird.id} className="birds">
+              
+                <p><strong>{name}</strong></p>
+                <p><strong>Price: ${amount}</strong></p>
+                <img className="img" src={img} alt="birdimage" />
                 <br></br>
-                <button>Adopt Me</button>
+                <button onClick={() => (props.handleAdoptBird(bird))}>Adopt Me</button>
                 
-              </li>
+                
+              
             </div>
+            </>
           );
         })}
-      </ul>
     </div>
+
   );
 }
