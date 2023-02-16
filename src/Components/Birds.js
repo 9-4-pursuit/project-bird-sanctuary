@@ -1,13 +1,14 @@
 import birdData from "../data/birds";
 import Card from "./Card";
+import '../styles/Birds.css'
 
+function Birds({adoptBird}) {
 
-function Birds () {
     return (
         <div>
             {
-                birdData.map((birdInfo, index) => {
-                    return <Card birdInfo={birdInfo} key={index} />
+                birdData.map((bird) => {
+                    return <Card bird={bird} key={bird.id} adoptBird={adoptBird}/>
                 })
             }
         </div>
