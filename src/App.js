@@ -31,8 +31,8 @@ function App() {
     )
 
   return (
-    <>
-      <div>
+    <div className="app">
+      <div className="one">
         <Cart
         cart={cart}
         setCart={setCart}
@@ -42,16 +42,16 @@ function App() {
         setTotal={setTotal}
         />
       </div>
-      <div>
+      <div className="two">
         <Checkout />
       </div>
-      <div>
+      <div className="three">
         <BirdCards 
         birds={birdData}
         handleAdoptBirdClick={handleAdoptBirdClick}
         />
       </div>
-    </>
+    </div>
   );
 }
 

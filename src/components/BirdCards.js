@@ -7,7 +7,7 @@ function BirdCards({ birds, handleAdoptBirdClick }) {
         <>
           <div className="card" >
             <h3>{bird.name}</h3>
-            <p>{bird.amount}</p>
+            <p>Price: ${bird.amount}</p>
             <img src={bird.img} alt=""></img>
             <button onClick={() => handleAdoptBirdClick(bird)} >Adopt</button>
         </div>
