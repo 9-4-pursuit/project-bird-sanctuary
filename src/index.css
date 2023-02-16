@@ -1,9 +1,13 @@
 /* .card {
     display: grid;
-    border: 5px solid green;
-    /* margin: 50px; */
-/* } */
+    border: 10px solid green;
+    margin: 30px;
+} */
 
 /* .img {
-    max-width: 100 px; */
-/* } */
+    max-width: 100 px;
+} */
+
+/* .card{
+    display: grid;
+} */

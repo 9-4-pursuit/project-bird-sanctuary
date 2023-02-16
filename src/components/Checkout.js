@@ -6,23 +6,23 @@ function Checkout({ setCartData }) {
     const [email, setEmail] = useState("");
     const [zipCode, setZipCode] = useState("");
 
-    const handleFirstName = (e) => {
-        const { value } = e.target;
+    const handleFirstName = (cart) => {
+        const { value } = cart.target;
         setFirstName(value);
     }
 
-    const handleLastName = (e) => {
-        const { value } = e.target;
+    const handleLastName = (cart) => {
+        const { value } = cart.target;
         setLastName(value);
     }
 
-    const handleEmail = (e) => {
-        const { value } = e.target;
+    const handleEmail = (cart) => {
+        const { value } = cart.target;
         setEmail(value);
     }
 
-    const handleZipCode = (e) => {
-        const { value } = e.target;
+    const handleZipCode = (cart) => {
+        const { value } = cart.target;
         setZipCode(value);
     }
 

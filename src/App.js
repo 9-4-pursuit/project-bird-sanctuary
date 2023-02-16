@@ -4,28 +4,32 @@ import birds from "./data/birds";
 import bonus from "./data/bonusItems";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
+import "./App.css";
 
-function App () {
+function App() {
   const [cartData, setCartData] = useState([]);
-  
-return (
+
+  return (
     <div className="container">
-      
-      <Cart 
-      cartData={cartData}
-      setCartData={setCartData}
-      bonusData={bonus}
+      <div className="checkout">
+        <Cart
+          cartData={cartData}
+          setCartData={setCartData}
+          bonusData={bonus}
+        />
+        <Checkout
+          cartData={cartData}
+          setCartData={setCartData}
+        />
+      </div>
+      <BirdCards
+        birdData={birds}
+        cartData={cartData}
+        setCartData={setCartData}
       />
-      <BirdCards 
-       birdData={birds}
-       cartData={cartData}
-       setCartData={setCartData}
-      />
-      <Checkout 
-      cartData={cartData}
-      setCartData={setCartData}
-      />
+
     </div>
+
   );
 };
 
