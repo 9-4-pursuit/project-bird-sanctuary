@@ -1,28 +1,13 @@
-import { useState, useEffect } from "react";
 
-function Cart({ cart, adoptBirdTotal, deleteBird, bonusItems }) {
-  const [bonus, setBonus] = useState([]);
 
-  useEffect(() => {
-    handleBonus(adoptBirdTotal);
-  }, [cart]);
+function Cart({ cart, adoptBirdTotal, deleteBird, bonus }) {
+ 
 
-  function handleBonus(adoptBirdTotal) {
+//   useEffect(() => {
+//     handleBonus(adoptBirdTotal);
+//   }, [cart]);
 
-if (adoptBirdTotal === 0) {
-setBonus([])
-}    else if (adoptBirdTotal >= 100 && adoptBirdTotal <= 300) {
-      setBonus([bonusItems[0]]);
-    } else if (adoptBirdTotal > 300 && adoptBirdTotal <= 500) {
-      setBonus([bonusItems[0], bonusItems[1]]);
-    } else if (adoptBirdTotal > 500 && adoptBirdTotal < 1000) {
-      setBonus([bonusItems[0], bonusItems[1], bonusItems[2]]);
-    } 
-    else {
-      setBonus(bonusItems);
-    }
-  }
-
+  
   return (
     <div className="Cart">
       <h1>Cart</h1>
@@ -43,10 +28,11 @@ setBonus([])
       </ol>
       <p>Your donations has qualified you for the following items</p>
       <ul>
-        {bonus &&
-          bonus.map((item, i) => {
-            return <li key={`bonus${i}`}>{item}</li>;
-          })}
+        { bonus && bonus.map((bonusItem,i) => {
+            return (
+                <li key={i}>{bonusItem}</li>
+            )
+        })} 
       </ul>
     </div>
   );
