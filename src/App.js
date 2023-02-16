@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BirdCart from "./components/BirdCart.js";
-import Birdcard from "./components/Birdcard.js";
-import Checkout from "./components/Checkout.js";
+import BirdCart from "./Components/BirdCart.js";
+import Birdcard from "./Components/Birdcard.js";
+import Checkout from "./Components/Checkout.js";
 import birdData from "./data/birds.js";
 import bonusItems from "./data/bonusItems.js";
 
