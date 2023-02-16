@@ -1,6 +1,3 @@
-import { useState } from "react";
-import bonusItems from "../data/bonusItems";
-
 function Cart(props) {
   let { cart, bonusItems } = props;
   
@@ -9,7 +6,7 @@ function Cart(props) {
   
       let total = 0;
       cart.map((bird) => {
-        cart.length >= 3 ? (total += bird.amount * 0.9) : (total += bird.amount);
+        return cart.length >= 3 ? (total += bird.amount * 0.9) : (total += bird.amount);
       });
   
       let bonuses;
