@@ -3,10 +3,12 @@
 // for rendering the birds that are in the cart, the total cost, the discount, and the bonus items.
 
 
-const Cart = ({ cart, discount, total, bonus }) => {
+const Cart = ({ cart, discount, total, bonus, setTotal }) => {
 
-    function deleteBird(event) {
-        event.target.parentNode.remove()
+    function deleteBird(e, bird) {
+        e.target.parentNode.remove()
+        setTotal(total - bird.amount)
+        console.log(bird)
          }
          
 
@@ -23,7 +25,7 @@ const Cart = ({ cart, discount, total, bonus }) => {
             <li>
             <p>{bird.name}    </p>
             <p>${bird.amount}</p>
-            <button onClick={deleteBird}>Delete</button>
+            <button onClick={(event) => deleteBird(event, bird)}>Delete</button>
             </li>
         ))}
         </ol>

@@ -49,6 +49,7 @@ function App () {
         total={total}
         discount={discount}
         bonus={bonus}
+        setTotal={setTotal}
         />
         <BirdCards birds={birdData} addToCart={addToCart}/>
         <Checkout 
