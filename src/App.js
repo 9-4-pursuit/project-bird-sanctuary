@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Cart from "./components/Cart.js";
-import Birdcard from "./components/Birdcard";
-import Checkout from "./components/Checkout";
-import birdData from "./data/birds";
-import bonusItems from "./data/bonusItems";
+import Birdcard from "./components/Birdcard.js";
+import Checkout from "./components/Checkout.js";
+import birdData from "./data/birds.js";
+import bonusItems from "./data/bonusItems.js";
 
 import './App.css';
 
