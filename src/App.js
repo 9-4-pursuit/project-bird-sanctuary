@@ -7,7 +7,7 @@ import Cart from "./components/Cart";
 import "./App.css";
 
 function App() {
-  const [birds, setBird] = useState(birdData);
+  const [birds] = useState(birdData);
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
