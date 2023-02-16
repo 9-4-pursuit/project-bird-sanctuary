@@ -1,14 +1,37 @@
 .card {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        margin-left: 270px;
+        margin-top: -1007px;
+        grid-template-columns: repeat(3, minmax(230px, 1fr));
         grid-gap: 20px;
-        grid-template-rows: max-content 400px 1fr;
+        grid-template-rows: auto;
         justify-content: center;
         text-align: center;
 }
 
+
 .birds {
     border: solid;
+    border-width: 4px;
     padding: 25px;
     background-color: aqua;
+}
+
+
+.Cart {
+    border: solid;
+    overflow-x: scroll;
+    text-align: center;
+    margin-top: 40px;
+    width: 200px;
+    height: 400px;
+    padding: 25px;
+    list-style: none;
+}
+
+.Checkout {
+    border: solid;
+    width: 200px;
+    padding: 25px;
+    height: 500px;
 }
