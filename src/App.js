@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import Cart from "./components/Cart";
 import BirdCards from "./components/Birdcard";
 import Checkout from "./components/Checkout";

@@ -2,7 +2,7 @@ function Cart(props) {
   let { cart, bonusItems } = props;
   
       let discount;
-      { cart.length >= 3 ? (discount = 10) : (discount = 0); }
+      cart.length >= 3 ? (discount = 10) : (discount = 0)
   
       let total = 0;
       cart.map((bird) => {
