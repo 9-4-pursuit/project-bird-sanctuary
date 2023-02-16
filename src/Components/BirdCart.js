@@ -1,4 +1,4 @@
-function Cart(props) {
+function BirdCart(props) {
   let { cart, bonusItems } = props;
   
       let discount;
@@ -71,4 +71,4 @@ function Cart(props) {
       );
     };
   
-    export default Cart;
+    export default BirdCart;

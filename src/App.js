@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Cart from "./components/Cart.js";
+import BirdCart from "./components/BirdCart.js";
 import Birdcard from "./components/Birdcard.js";
 import Checkout from "./components/Checkout.js";
 import birdData from "./data/birds.js";
 import bonusItems from "./data/bonusItems.js";
 
-import './App.css';
+// import "./src/App.css"
 
 function App() {
   const [cart, setCart] = useState([])
@@ -13,7 +13,7 @@ function App() {
   return (
         <div className="main">
 <section>
-      <Cart 
+      <BirdCart 
 		  cart={cart} 
 	      bonusItems={bonusItems} 
 	      setCart={setCart}
