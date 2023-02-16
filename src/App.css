@@ -1,0 +1,25 @@
+.main {
+	display: grid;
+    grid-template-columns: auto auto;
+}
+
+#section {
+    position: relative;
+    left: 20px;
+    float: left;
+}
+
+.Cart {
+    width: 25em;
+    border: 2px solid;
+}
+
+.Checkout {
+    width:25em;
+    border: 2px solid;
+}
+
+
+.card {
+	
+}
