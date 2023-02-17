@@ -11,25 +11,25 @@ function App() {
   const [cart, setCart] = useState([])
 
   return (
-        <div className="main">
-<section>
-      <BirdCart 
-		  cart={cart} 
-	      bonusItems={bonusItems} 
-	      setCart={setCart}
+		<div className="main">
+			<section>
+      	<BirdCart 
+					cart={cart} 
+					bonusItems={bonusItems} 
+					setCart={setCart}
 	      />
 
-      <Checkout 
-	  		id="box2"
-	      setCart={setCart}
+				<Checkout 
+					id="box2"
+					setCart={setCart}
 	      />
-</section>
+			</section>
       <Birdcard 
 	      setCart={setCart} 
 	      cart={cart} 
 	      birds={birdData}
-	      />
-       </div>
+	    />
+    </div>
   );
 };
 

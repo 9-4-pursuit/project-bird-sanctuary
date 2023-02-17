@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 function Checkout(props) {
-let { setCart } = props
+  const { setCart } = props;
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [zipCode, setZipCode] = useState("");
 
- function userEntry(event) {
+  function userEntry(event) {
     event.preventDefault();
     if (!firstName || !lastName || !email || !zipCode) {
       alert("Please complete the form");
@@ -25,11 +25,10 @@ let { setCart } = props
     <div className="Checkout" id="box2">
       <section>
         <h1>Checkout</h1>
-        <form 
-        onSubmit={userEntry}>
+        <form onSubmit={userEntry}>
           <label>
             First Name
-            <br></br>
+            <br />
             <input
               value={firstName}
               onChange={(event) => setFirstName(event.target.value)}
@@ -41,7 +40,7 @@ let { setCart } = props
           </label>
           <label>
             Last Name
-            <br></br>
+            <br />
             <input
               value={lastName}
               onChange={(event) => setLastName(event.target.value)}
@@ -53,7 +52,7 @@ let { setCart } = props
           </label>
           <label>
             Email
-            <br></br>
+            <br />
             <input
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -64,7 +63,7 @@ let { setCart } = props
           </label>
           <label>
             Zip Code
-            <br></br>
+            <br />
             <input
               value={zipCode}
               onChange={(event) => setZipCode(event.target.value)}
@@ -73,7 +72,7 @@ let { setCart } = props
               type="number"
             />
           </label>
-          <br></br>
+          <br />
           <input type="submit" text="Submit" />
         </form>
       </section>
