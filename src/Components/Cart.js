@@ -5,7 +5,7 @@ function Cart ({ cart }) {
 
     const [total, setTotal] = useState(0);
     const [discount, setDiscount] = useState(0);
-    // const [bonuses, setBonuses] = useState([]);
+    const [bonuses, setBonuses] = useState([]);
 
     function handleTotal(){
         let result = 0;
@@ -15,19 +15,29 @@ function Cart ({ cart }) {
             result *= 0.9;
         }
         setTotal(result);
+        
         console.log(cart)
     }
 
-    // function handleBonuses(){
-    //     if (total >= 100 && total < 300) {
-    //         setBonuses(bonusItems[0])
-    //     }
-    // }
+    function handleBonuses() {
+        if (total >= 100 && total < 300) {
+            setBonuses(bonuses => [...bonuses, bonusItems[0]]);
+        } else if (total >= 300 && total < 500) {
+            setBonuses(bonuses => [...bonuses, bonusItems.slice(0, 2)]);
+        } else if (total >= 500 && total < 1000) {
+            setBonuses(bonuses => [...bonuses, bonusItems.slice(0, 3)]);
+        } else if (total >= 1000) {
+            setBonuses(bonuses => [...bonuses, bonusItems]);
+        }
+    }
 
     useEffect(() => {
         handleTotal();
-        // handleBonuses();
     })
+
+    useEffect(() => {
+        handleBonuses();
+    }, [total])
 
     return (
         <div className="Cart">
@@ -37,17 +47,17 @@ function Cart ({ cart }) {
             <ol >
                 {
                     cart.map((bird) => (
-                        <li key={bird.name} >{bird.name} ${bird.amount}.00</li>
+                        <li key={bird.id} >{bird.name} ${bird.amount}.00</li>
                     ))
                 }
             </ol>
             <p>Your donations has qualified you for the following items</p>
             <ul>
-                {/* {
+                {
                     bonuses.map((bonus) => (
                         <li>{bonus}</li>
                     ))
-                } */}
+                }
             </ul>
         </div>
     )
