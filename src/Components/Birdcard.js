@@ -24,3 +24,4 @@ function Birdcard(props) {
   };
   
   export default Birdcard;
+  
