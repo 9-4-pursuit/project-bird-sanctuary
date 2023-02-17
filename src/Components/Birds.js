@@ -1,5 +1,5 @@
 function Birds(props) {
-  let { name, amount, img, id, cart, setCart } = props;
+  const { name, amount, img, id, cart, setCart } = props;
     return (
       <div className="birds">
         <h4>{name}</h4>

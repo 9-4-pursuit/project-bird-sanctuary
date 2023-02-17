@@ -1,7 +1,7 @@
 import Birds from "./Birds.js";
 
 function Birdcard(props) {
-  let { birds, cart, setCart } = props;
+  const { birds, cart, setCart } = props;
   
     return (
       <ul>
@@ -24,4 +24,3 @@ function Birdcard(props) {
   };
   
   export default Birdcard;
-  
