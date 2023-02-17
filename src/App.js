@@ -5,7 +5,7 @@ import Checkout from "./Components/Checkout.js";
 import birdData from "./data/birds.js";
 import bonusItems from "./data/bonusItems.js";
 
-// import "./src/App.css"
+import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([])
