@@ -11,13 +11,13 @@ export default function Checkout({formSubmission}){
             <input type="text" id="firstName" />
         </label>
         <label>Last Name
-            <input type="text" id="firstName" />
+            <input type="text" id="lastName" />
         </label>
         <label>Email
-            <input type="email" id="firstName" />
+            <input type="email" id="email" />
         </label>
         <label>Zip Code
-            <input type="number" id="firstName" />
+            <input type="number" id="zipCode" />
         </label>
         <input type="submit" />
         </form>

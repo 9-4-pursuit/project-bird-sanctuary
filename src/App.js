@@ -95,7 +95,7 @@ function App() {
   }
 
   function cartAdoptThisBird(event, bird, cart, total) {
-    event.preventDefault();
+   // event.preventDefault();
     setCart(previous => [...previous, bird]);
     setTotal(total => total + bird.amount);
     setRunOnce(true);
@@ -122,6 +122,7 @@ function App() {
     So we add 1 to cart.length to represent the bird that will be added, and evaluate
     against the condition.
     */
+
     if (cart.length + 1 >= 3) {
       setDiscount(10);
     }
