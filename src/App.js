@@ -15,6 +15,7 @@ function App () {
 
   function removeBird(bird) {
     console.log(prevBird)
+    console.log(setBird)
     const filteredBirdArray = prevBird.filter((birdy) => birdy.id !== bird.id )
     let removedBird = {}
     for(let i = 0; i < prevBird.length; i++){

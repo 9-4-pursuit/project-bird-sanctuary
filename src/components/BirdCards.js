@@ -15,7 +15,7 @@ function BirdCards({ callback }) {
                         <div key={bird.id} className="birds">
                             <h5>{bird.name}</h5>
                             <p>${bird.amount}</p>
-                            <img src={bird.img} style={{maxWidth: "100px"}} id="image" alt="bird image"></img>
+                            <img src={bird.img} style={{maxWidth: "100px"}} id="image" alt="bird picture"></img>
                             <br></br>
                             <button onClick={() => callback(bird)}>Adopt</button>
                         </div>
