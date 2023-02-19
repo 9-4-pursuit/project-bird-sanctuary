@@ -1,5 +1,6 @@
 function BirdCart(props) {
-  const { birds, cart, bonusItems } = props;
+  const { cart, bonusItems } = props;
+  // const { birds} = props;
 
   const areThreePlus = cart.length >= 3;
   const discount = areThreePlus ? 10 : 0;
@@ -50,9 +51,11 @@ function BirdCart(props) {
 
   function removeBird(event, birds) {
     event.target.parentNode.remove();
+  }
+  
     // total = birds.reduce((a,b) => { return b.amount + a; }, 0)
     //console.log(birds)
-  }
+  //}
     // setTotal(total - bird.amount);
     // console.log(bird)
   //}
