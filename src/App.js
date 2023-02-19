@@ -8,7 +8,8 @@ import bonusItems from "./data/bonusItems.js";
 import "./App.css";
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
+  //const [total, setTotal] = useState(0);
 
   return (
     <div className="main">
