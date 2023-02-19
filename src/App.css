@@ -1,0 +1,73 @@
+
+.app {
+    width: fit-content;
+    height: 97vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 1fr 1fr;
+    margin: 1%;
+    
+}
+
+.card {
+    border: 2px solid red;
+    margin: 20px;
+    display: grid;
+    grid-gap: 30px;
+    justify-content: center;
+    text-align: center;
+    width: 13em; 
+    height: 17em;
+}
+
+.birds {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    border: solid;
+    padding: 25px;
+    background-color: aqua;
+    max-height: fit-content;
+}
+
+button {
+    background-color: aliceblue;
+    justify-content: center;
+}
+.img {
+    height: 30%;
+    max-width: 50%;
+}
+
+li  {
+    list-style: none;
+} 
+
+.birds li p{
+    font-size: large;
+}
+
+.Checkout {
+    border: 3px solid red;
+    margin: 20px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    border: 3px solid red;
+    margin-bottom: 20%;
+}
+
+.Cart {
+    margin: 20px;
+    height: fit-content;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    border: 3px solid red;
+    margin-bottom: 20%;
+}
+
+/* .Cart button {
+    float: right;
+} */
