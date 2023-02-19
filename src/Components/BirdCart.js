@@ -1,6 +1,6 @@
 function BirdCart(props) {
-  const { cart, bonusItems } = props;
-  
+  const { birds, cart, bonusItems } = props;
+
   const areThreePlus = cart.length >= 3;
   const discount = areThreePlus ? 10 : 0;
 
@@ -42,9 +42,20 @@ function BirdCart(props) {
     );
   }
 
-  function removeBird(event) {
-    event.target.parentNode.remove()
+// function removeBird(bird) {
+//   let updatedCart = cart.splice((index) => { return bird.id !== index.id; });
+//   setCart(updatedCart);
+//   setCart([]);
+// };
+
+  function removeBird(event, birds) {
+    event.target.parentNode.remove();
+    // total = birds.reduce((a,b) => { return b.amount + a; }, 0)
+    //console.log(birds)
   }
+    // setTotal(total - bird.amount);
+    // console.log(bird)
+  //}
   //got event.target.parentNode.remove() from https://stackoverflow.com/questions/47377279/removing-elements-from-the-dom-by-their-id-not-index
 
   return (

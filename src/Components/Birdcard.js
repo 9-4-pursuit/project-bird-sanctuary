@@ -4,6 +4,7 @@ function Birdcard(props) {
   const { birds, cart, setCart } = props;
   
     return (
+      <div className="birdcard-container">
       <ul>
         {birds.map(({ name, amount, id, img }) => {
           return (
@@ -20,6 +21,7 @@ function Birdcard(props) {
           );
         })}
       </ul>
+      </div>
     );
   };
   
