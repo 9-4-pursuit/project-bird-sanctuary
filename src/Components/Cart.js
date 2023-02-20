@@ -1,134 +1,112 @@
-//import birdData from "../data/birds";
-// import "./App.css";
-//import styles from './App.css'
+import { useState } from "react";
+import bonusItems from "../data/bonusItems";
+import uuid from 'react-uuid';
 
 
-function Cart(props) {
-  const { cart, setCart } = props
+ function Cart(props) {
+    //should this be props or should it be { total, updateBird, deleteBird } and if so, what is the difference?
+
+    const [bonusItem, setBonusItem] = useState([]);
+    let discount = props.cart.length > 2 ? 10 : 0;
+    console.log("props.cart: " ,props.cart);
+
+
+
+    function getBonusItems(total) {
+       let bonuses = [];
+      if (total >= 100 && total < 300) {
+        setBonusItem(() => [bonusItem, bonusItems[0]]);
+        // bonuses.push(bonusItems[0]);
+      }
+      if (total >= 300  && total < 500) {
+        bonuses.push(bonusItems[1]);
+      }
+      if (total >= 500 && total < 1000) {
+        bonuses.push(bonusItems[2]);
+      }
+      if (total >= 1000) {
+        bonuses.push(bonusItems[3]);
+      }
+      return bonuses;
+      }
+  
+
+
+      //{(total >= 1000) ? bonusItems[4] : "nothing"}
+
+
+
+    // function getBonusItems() {
+    //   if (total >= 100 && total < 300) {
+    //     setBonusItem(() => [bonusItem, bonusItems[0]]);
+    //   }
+
+
+
+      // use filter to keep all the birds that DON'T have the id you are deleting. Using !==.
+      // make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
+      //add a delete button to each bird
+    function handleDelete(bird) {
+
+          }
+      
+      
+          // function deleteBird(bird) {
+          //   const newCart=cartContent.filter((item)=>bird.id !==item.id)
+          //   setCartContent(newCart);
+          //   setCartTotal(cartTotal-bird.amount)
+      
+          //   if (cartContent.length<4) {
+          //     setDiscount(0)
+          //   }
+          // }
+           
+  
+
+    //const{ birds, total, discount } = cart;
+
+
 
   return (
     <div className="Cart">
       <h3>Your cart</h3>
       <ol>
-        {cart.map((bird) => (
-          <li key={bird.id}>{bird.name}</li>
+        {props.cart.map((bird) => (
+          <li key={uuid()}>{bird.name} - {bird.amount} - <button className="deleteButton" id="deleteButton" onClick={handleDelete}>
+          Delete This {bird.name}
+          </button></li>
         ))}
       </ol>
 
-      <p> Discount: <span id="discount-amount">{}%</span> </p>
-
-      <h4>
-        Total: $<span>{}</span>
-      </h4>
-
-      <button
-          className="clear-cart"
-          onClick={() => {
-            setCart({
-              birds: [],
-              total: 0,
-              discount: 0,
-              bonuses: []
-            });
-          }}
-         >
-          Clear cart
-      </button>
-
-      <button 
-        className="submit" 
-        content="Submit"
-        onClick={() => {
-          alert("You have adopted birds. Thank you!");
-          setCart({
-            birds: [],
-            total: 0,
-            discount: 0,
-            bonuses: []
-          });
-        }}
-      >
-        Submit
-      </button>
-      <p className="success-alert" id="success-alert"></p>
-
-
-
+      {/* Display Bonus Items Earned */}
       <p> Bonus items earned: </p>
-      <p>
-        {" "}
-        Discount: <span id="discount-amount"></span>%
-      </p>
+      <ul>
+        {getBonusItems()}
+        {bonusItems.map((bonus) => (
+        <li key={uuid()}>{bonus.name}</li>
+        ))}
+      </ul> 
+      
       <p></p>
+      <p>
+        Discount: <span id="discount-amount">{discount}%</span>
+      </p>
 
-      </div>
+      
+        <h4>
+
+          Total: $<span>{(discount === 0) ?  props.total : (props.total)*.9}</span>
+        </h4>
+
+        <p className="success-alert" id="success-alert"></p>
+      
+    </div>
   );
 }
 
 export default Cart;
 
-// DONE  The cart has a class name of Cart
-// When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
-// The total shows up as an <h4> element inside the cart
-// When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
-// When there are less than 3 birds in the cart there is a 0% discount
-// When there are 3 or more birds in the cart there is a 10% discount
 
-// I can complete the inputs in the checkout form.
-// When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
-//  DONE  Alert text should include: You have adopted birds. Thank you!
-// When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
+      // Using randomizer to generate a unique idea for each bird in cart. This is not a great way to do it. Try UUID instead.
 
-//
-
-// function emptyFunction(){
-//   document.createElement("p").value = "emptyFunction"
-// }
-
-//
-
-//  <h4>Total: <span>`${totalCost}</span></h4>
-
-
-
-
-/*
-
-  // const{ birds, total, discount } = cart;
-
-const cart = {
-  birds:[],
-  total: 0,
-  discount: 0,
-  bonuses:[],
-}
-
-
-  // const cart = JSON.parse(localStorage.getItem("cart")) || {
-  //   birds:[],
-  //   total: 0,
-  //   discount: 0,
-  //   bonuses:[],
-  // };
-
-  
-  // const [total, setTotal] = 0;
-
-  // let discount = 0;
-  // const totalCost = 0;
-  // const bonuses = "";
-  // const birdsInCart = 0;
-
-  // switch (birdsInCart) {
-  //   case 0:
-  //   case 1:
-  //   case 2:
-  //     console.log("One bird");
-  //     discount = 0;
-  //     break;
-  //   default:
-  //     console.log("default number of birds");
-  // }
-
-
-*/
+      // Calculate total cost of all birds in the cart. Then if discount doesn't equal zero, multiply it by .90. 

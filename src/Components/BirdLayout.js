@@ -1,5 +1,4 @@
 import React from "react";
-//import birdData from "../data/birds";
 import BirdCard from "./BirdCard";
 
 

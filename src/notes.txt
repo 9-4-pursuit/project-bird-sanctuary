@@ -1,4 +1,129 @@
+Current problems
+1)  How do i make unique IDs?
+2)  How do prices go into the cart? How do I get total price?
+   A) let cartTotal = 0
+      cart.forEach((bird)=> {
+      cartTotal += bird.amount 
+      })
+    B)  const addToCart = (bird) => {
+      const updatedBird = { ...bird, id: `${bird.id}-${randomizer}` };
+      setCart([...cart, updatedBird]);
+      setTotal((prevTotal) => prevTotal + bird.price);
+      }
+3)  How do i get bonus items in cart? 
+      function getBonusItems(total) {
+      let bonuses = [];
+      if (total >= 100 && total < 300) {
+        bonuses.push(bonusItems[0]);
+      }
+      if (total >= 300  && total < 500) {
+        bonuses.push(bonusItems[1]);
+      }
+      if (total >= 500 && total < 1000) {
+        bonuses.push(bonusItems[2]);
+      }
+      if (total >= 1000) {
+        bonuses.push(bonusItems[3]);
+      }
+      return bonuses;
+    }
+4) I need a remove button next to each bird.
+5) Do I even have the functions in the right component?
+6) How do I get the checkout and the Cart on the left>
+7) I need to move the submit button from the Cart to the checkout.
+8) Should  cart={cart} setCart={setCart}  be in Cart AND Checkout?
 
+
+
+
+  
+
+==============  from Cart  ==========================
+This is not required:
+        <button
+          className="clear-cart"
+          onClick={() => {
+            setCart({
+              birds: [],
+              total: 0,
+              discount: 0,
+              bonuses: [],
+            });
+          }}
+        >
+          Clear cart
+        </button>
+
+
+================
+from BirdCard
+// <h2>{props.birdy.name}</h2>
+//<p>Price: ${props.birdy.amount} OR {amount}</p>
+// <p>id: {props.birdy.id}</p> OR {id}
+// <img alt="profile pic" src="{props.birdy.image}/> */}
+//
+===================================================
+
+// DONE  The cart has a class name of Cart
+// When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
+// The total shows up as an <h4> element inside the cart
+// When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
+// When there are less than 3 birds in the cart there is a 0% discount
+// When there are 3 or more birds in the cart there is a 10% discount
+
+// I can complete the inputs in the checkout form.
+// When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
+//  DONE  Alert text should include: You have adopted birds. Thank you!
+// When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
+
+//
+
+// function emptyFunction(){
+//   document.createElement("p").value = "emptyFunction"
+// }
+
+//
+
+// <h4>Total: <span>${totalCost}</span></h4>
+
+
+
+==========================================
+
+
+/*
+  // const cart = JSON.parse(localStorage.getItem("cart")) || {
+  //   birds:[],
+  //   total: 0,
+  //   discount: 0,
+  //   bonuses:[],
+  // };
+
+  
+  // const [total, setTotal] = 0;
+
+  // let discount = 0;
+  // const totalCost = 0;
+  // const bonuses = "";
+  // const birdsInCart = 0;
+
+  // switch (birdsInCart) {
+  //   case 0:
+  //   case 1:
+  //   case 2:
+  //     console.log("One bird");
+  //     discount = 0;
+  //     break;
+  //   default:
+  //     console.log("default number of birds");
+  // }
+
+
+*/
+
+
+
+===============================
 // function BirdCard (props) {
 
 //     // const [birds, setBirds] = useState(birdData)
