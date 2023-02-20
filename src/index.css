@@ -1,0 +1,9 @@
+.app {
+    display: flex;
+    grid-template-areas: 'cart main' 'checkout main';
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+}

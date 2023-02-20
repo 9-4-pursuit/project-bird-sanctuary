@@ -16,10 +16,11 @@ function App () {
   }
 
   return (
-    <div>
-      <Birds adoptBird={adoptBird}/>
+    <div className="app">
       <Cart cart={cart} />
       <Checkout />
+      <Birds adoptBird={adoptBird}/>
+      
     </div>
   );
 };

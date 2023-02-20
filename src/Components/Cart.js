@@ -20,6 +20,7 @@ function Cart ({ cart }) {
     }
 
     function handleBonuses() {
+        setBonuses([]);
         if (total >= 100 && total < 300) {
             setBonuses(bonuses => [...bonuses, bonusItems[0]]);
         } else if (total >= 300 && total < 500) {
@@ -54,8 +55,8 @@ function Cart ({ cart }) {
             <p>Your donations has qualified you for the following items</p>
             <ul>
                 {
-                    bonuses.map((bonus) => (
-                        <li>{bonus}</li>
+                    bonuses.map((bonus, index) => (
+                        <li key={index}>{bonus}</li>
                     ))
                 }
             </ul>
