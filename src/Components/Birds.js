@@ -4,10 +4,11 @@ function Birds(props) {
       <div className="birds">
         <h4>{name}</h4>
         <p>${amount}</p>
-        <img src={img} 
-            alt={name} 
-            width="125"
-            height="100"
+        <img
+          src={img}
+          alt={name}
+          width="125"
+          height="100"
         />
         <br />
         <button value={id} onClick={() => setCart([...cart, { name, amount }])}>

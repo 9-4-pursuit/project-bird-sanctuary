@@ -1,14 +1,21 @@
+import {useState, useEffect} from "react";
+
 function BirdCart(props) {
-  const { cart, bonusItems } = props;
-  // const { birds} = props;
+  const { cart, setCart, bonusItems } = props;
+  const [total, setTotal] = useState(0);
+  // const { birds } = props;
 
   const areThreePlus = cart.length >= 3;
   const discount = areThreePlus ? 10 : 0;
 
-  let total = 0;
-  cart.forEach((bird) => {
-    total += areThreePlus ? bird.amount * 0.9 : bird.amount;
-  });
+  useEffect(() => {
+    let birdCost = 0;
+    cart.forEach((bird) => {
+      birdCost += areThreePlus ? bird.amount * 0.9 : bird.amount;
+    });
+    setTotal(birdCost);
+  }, [areThreePlus, cart]);
+  
 
   let bonuses;
   if (total >= 1000) {
@@ -43,41 +50,31 @@ function BirdCart(props) {
     );
   }
 
-// function removeBird(bird) {
-//   let updatedCart = cart.splice((index) => { return bird.id !== index.id; });
-//   setCart(updatedCart);
-//   setCart([]);
-// };
+  function handleRemoveBird(event, index) {
+    event.preventDefault();
 
-  function removeBird(event, birds) {
-    event.target.parentNode.remove();
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
   }
-  
-    // total = birds.reduce((a,b) => { return b.amount + a; }, 0)
-    //console.log(birds)
-  //}
-    // setTotal(total - bird.amount);
-    // console.log(bird)
-  //}
-  //got event.target.parentNode.remove() from https://stackoverflow.com/questions/47377279/removing-elements-from-the-dom-by-their-id-not-index
 
   return (
     <div className="Cart" id="box1">
       <h2>Cart</h2>
       <h3>Discount: {discount}%</h3>
-      <h4>Total:${total}</h4>
+      <h4>Total: ${total}</h4>
       <ol>
-        {cart.map((bird) => {
+        {cart.map((bird, index) => {
           return (
-            <li>
+            <li key={index}>
               {bird.name}: ${bird.amount}
-              <button onClick={removeBird}>Remove</button>
+              <button onClick={(event) => handleRemoveBird(event, index)}>Remove</button>
             </li>
           );
         })}
       </ol>
       <p>Your donations have qualified you for the following items</p>
-      <p>{bonuses}</p>
+      <div>{bonuses}</div>
     </div>
   );
 };
