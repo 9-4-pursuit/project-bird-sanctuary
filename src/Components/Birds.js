@@ -1,6 +1,5 @@
 import birdData from "../data/birds";
-import Card from "./Card";
-
+import Card from "./Card"; 
 
 function Birds({adoptBird}) {
 
