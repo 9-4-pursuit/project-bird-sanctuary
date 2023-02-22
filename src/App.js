@@ -3,8 +3,6 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import { useState } from "react";
 import './App.css'
-// import { v4 as uuidv4 } from 'uuid';
-
 
 function App () {
 
@@ -21,7 +19,6 @@ function App () {
       <Cart cart={cart} setCart={setCart} />
       <Checkout setCart={setCart} />
       <Birds adoptBird={adoptBird} />
-      
     </div>
   );
 };

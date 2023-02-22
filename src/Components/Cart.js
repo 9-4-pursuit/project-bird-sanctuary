@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import bonusItems from "../data/bonusItems";
-// import { v4 as uuidv4 } from 'uuid';
 
 function Cart ({ cart, setCart }) {
 
     const [total, setTotal] = useState(0);
     const [discount, setDiscount] = useState(0);
     const [bonuses, setBonuses] = useState([]);
-    // const [birdIndex, setBirdIndex] = useState(0);
 
     function handleTotal(){
         let result = 0;
@@ -41,7 +39,7 @@ function Cart ({ cart, setCart }) {
     }, [total])
 
     function removeBird(birdIndex) {
-        const filteredCart = cart.filter((bird) => bird.index !== birdIndex);
+        const filteredCart = cart.filter((bird, index) => index != birdIndex);
         setCart(filteredCart);
     }
 
@@ -53,11 +51,10 @@ function Cart ({ cart, setCart }) {
             <ol >
                 {
                     cart.map((bird, index) => {
-                        bird.index = index;
                         return (
                             <li key={index} >
                                 {bird.name} ${bird.amount}.00
-                                <button onClick={() => removeBird(bird.index)}>Remove</button>
+                                <button onClick={() => removeBird(index)}>Remove</button>
                             </li>
                         )
                     })
@@ -74,7 +71,3 @@ function Cart ({ cart, setCart }) {
 }
 
 export default Cart;
-
-/*
-
-*/
