@@ -1,0 +1,462 @@
+Current problems
+3)  How do i get bonus items in cart? 
+      function getBonusItems(total) {
+      let bonuses = [];
+      if (total >= 100 && total < 300) {
+        bonuses.push(bonusItems[0]);
+      }
+      if (total >= 300  && total < 500) {
+        bonuses.push(bonusItems[1]);
+      }
+      if (total >= 500 && total < 1000) {
+        bonuses.push(bonusItems[2]);
+      }
+      if (total >= 1000) {
+        bonuses.push(bonusItems[3]);
+      }
+      return bonuses;
+    }
+5) Do I even have the functions in the right component?
+6) How do I get the checkout and the Cart on the left>
+8) Should  cart={cart} setCart={setCart}  be in Cart AND Checkout?
+9) Should the delete button be on click or should it be an anonymous function and what is the difference?
+
+
+DONE 1)  How do i make unique IDs?
+DONE 2)  How do prices go into the cart? How do I get total price?
+   A) let cartTotal = 0
+      cart.forEach((bird)=> {
+      cartTotal += bird.amount 
+      })
+    B)  const addToCart = (bird) => {
+      const updatedBird = { ...bird, id: `${bird.id}-${randomizer}` };
+      setCart([...cart, updatedBird]);
+      setTotal((prevTotal) => prevTotal + bird.price);
+      }
+DONE 4) I need a remove button next to each bird.
+DONE 7) I need to move the submit button from the Cart to the checkout.
+
+
+  ================== part of App ================
+   
+/*  const [show, setShow] = useState(true)
+ 
+    // setCart((prevCart => ({
+    //   ...prevCart,
+    //   birds: [...prevCart.birds, bird],
+    //   total: prevCart.total + bird.amount,
+    // }))); */
+
+
+==============  from Cart  ==========================
+This is not required:
+        <button
+          className="clear-cart"
+          onClick={() => {
+            setCart({
+              birds: [],
+              total: 0,
+              discount: 0,
+              bonuses: [],
+            });
+          }}
+        >
+          Clear cart
+        </button>
+
+
+================
+from BirdCard
+  // <h2>{props.birdy.name}</h2>
+  //<p>Price: ${props.birdy.amount} OR {amount}</p>
+  // <p>id: {props.birdy.id}</p> OR {id}
+  // <img alt="profile pic" src="{props.birdy.image}/> */}
+  //
+===================================================
+
+// DONE  
+  //The cart has a class name of Cart
+  // When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
+  // The total shows up as an <h4> element inside the cart
+  // When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
+  // When there are less than 3 birds in the cart there is a 0% discount
+  // When there are 3 or more birds in the cart there is a 10% discount
+  // I can complete the inputs in the checkout form.
+  // When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
+  //  DONE  Alert text should include: You have adopted birds. Thank you!
+  // When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
+
+//
+
+// function emptyFunction(){
+//   document.createElement("p").value = "emptyFunction"
+// }
+
+//
+
+// <h4>Total: <span>${totalCost}</span></h4>
+
+============  CART  ==============================
+
+/*
+  // const cart = JSON.parse(localStorage.getItem("cart")) || {
+  //   birds:[],
+  //   total: 0,
+  //   discount: 0,
+  //   bonuses:[],
+  // };
+
+  
+  // const [total, setTotal] = 0;
+
+  // let discount = 0;
+  // const totalCost = 0;
+  // const bonuses = "";
+  // const birdsInCart = 0;
+
+  // switch (birdsInCart) {
+  //   case 0:
+  //   case 1:
+  //   case 2:
+  //     console.log("One bird");
+  //     discount = 0;
+  //     break;
+  //   default:
+  //     console.log("default number of birds");
+  // }
+
+
+
+
+ function Cart(props) {
+    //should this be props or should it be { total, updateBird, deleteBird } and if so, what is the difference?
+
+This is just two different ways to do the same thing, onw deconstructed, tbhe other with props.
+
+
+*/
+
+
+===============================
+// function BirdCard (props) {
+
+//     // const [birds, setBirds] = useState(birdData)
+//     const { name, amount, img } = props.bird
+
+
+//         //make copy of the birds array using destructuring
+//         //add Royal Flycatcher
+//       // const newBirdCard="newBirdCard string for now"
+//       //   setBirds([newBirdCard, ...birds])
+    
+
+
+
+//     return (
+//       <div>
+//         <h1>Hello, BirdCard!</h1>
+//         <h2>bird name</h2> 
+//         <p>price of bird</p>
+//         <p>image of bird</p>
+//         {/* <h2>{props.birdData.name}</h2> */}
+//         <p>$amountTBD</p> 
+//         {/* <image src="https://i.imgur.com/GacKN4tb.jpg" /> */}
+//         {/* <p>{props.birdData.image}</p>
+//         <p>{props.birdData.img}</p> */}
+
+
+//       </div>
+//     );
+//   };
+  
+// export default BirdCard;
+
+// //   The bird data comes from src/data/birds.js
+// // Each bird card displays the name, image, and amount (price)
+// // Each bird card has a class name of card
+// // Each bird card has an Adopt button
+// // The button text should be: Adopt
+
+
+//     // function addBird() {
+//     //     console.log("Add bird to card")
+//     //     //create a new bird 
+//     //     //adding a basic object of sorts
+//     //     const newBirdCard = {
+//     //         img: "https://i.imgur.com/GacKN4tb.jpg",
+//     //         name: "Royal Flycatcher",
+//     //         amount: 300,
+//     //         id: 777,
+//     //     };
+
+
+//   //   function removeBird(birdID) {
+//   //     console.log("remove bird number ", birdID);
+//   //     //use a filter method to remove any dogs that have a matching ID
+//   //     const filterBirdArray = birds.filter((bird) => bird.id !== birdID)
+//   //         //this will filter out all birds that do NOT have the id I want to get rid of 
+//   //         //set the birds array to the new array that does not include the bird I want to get rid of
+//   //     setBirds(filterBirdArray);
+//   // }
+
+
+
+///////////////////  BIRDLAYOUT ////////////////////
+Got rid of this in BirdLayout
+
+        <BirdCard />
+            {/* <BirdCard />
+            <BirdCard />
+            <BirdCard />
+            <BirdCard />
+            <BirdCard />  
+            <BirdCard /> */}
+      </div>
+------// const BirdLayout = ({handleAdopt}) => {
+//   return (
+//     <section>
+//       {
+//         birdData.map((item)=> {
+//           <Cards item={item} handleAdopt={handleAdopt} />
+//         })
+//       }
+//     </section>
+//   )
+// }
+
+//  const data = props.birds;
+
+// <div className="layout">
+// {data && data.map((birdy, index) => {
+//     return <BirdCard birdy = {birdy} handleAdopt={props.handleAdopt} />
+// })
+
+/*
+<BirdCard birdy={bird} handleAdopt={() => handleAdopt(bird)} setCart={setCart} />
+
+
+     <section>
+       {birdData.map((item) => 
+      <Cards item={item} handleAdopt={handleAdopt} />
+         )}
+     </section>
+
+*/---------------------------------
+
+I am having some weird problems with CSS. I will move all the code here for now.
+
+style.module.CSS
+/* The alert message box */
+
+.alert {
+    position:relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.primary {
+    color: #084298;
+    background-color: #cfe2ff;
+    border-color: #b6d4fe;
+}
+
+.secondary {
+    color: #41464b;
+    background-color: #e2e3e5;
+    border-color: #d3d6d8;
+}
+
+.info {
+    color: #055160;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color:black;
+}
+
+.hide {
+    display:none;
+}
+
+=======================================
+
+for the Cart, this is what I had before:
+
+
+
+      <form className="cart">
+        <fieldset>
+          <label>
+            <p> Example </p>
+            <input name="example" />
+          </label>
+        </fieldset>
+        <button type="submit">Submit button</button>
+      </form>
+      <form>
+        <fieldset>
+          <label for="clear-cart">
+            <p>for clear cart</p>
+            <input name="clear-cart" />
+          </label>
+        </fieldset>
+        <button
+          className="clear-cart"
+          onSubmit="squigly lines and a prop?"
+        ></button>
+      </form>
+      <p> Bonus items earned: </p>
+      <p>
+        {" "}
+        Discount: <span id="discount-amount"></span>%
+      </p>
+      <p></p>
+
+      <h4>
+        Total: $<span>tbd</span>
+      </h4>
+      <button className="submit" content="Submit"></button>
+      <p className="success-alert" id="success-alert"></p>
+    </div>
+  );
+}
+
+export default Cart;
+
+//  <h4>Total: <span>`${totalCost}</span></h4>
+=================
+
+
+  // const [total, setTotal] = 0;
+
+  // let discount = 0;
+  // const totalCost = 0;
+  // const bonuses = "";
+  // const birdsInCart = 0;
+
+  // switch (birdsInCart) {
+  //   case 0:
+  //   case 1:
+  //   case 2:
+  //     console.log("One bird");
+  //     discount = 0;
+  //     break;
+  //   default:
+  //     console.log("default number of birds");
+  // }
+
+
+
+
+  ////////////////// App dot js //////////////////////
+
+  /*
+      <BirdLayout>
+          {birdData.map((bird) =>
+          <BirdCard
+            key={bird.id}
+            birdy={bird}
+            handleAdopt={() => handleAdopt(bird)} />
+            )}
+        </BirdLayout>
+
+        */
+
+
+
+
+
+        =========
+
+
+import uuid from 'react-uuid';
+
+
+ function Cart(props) {
+
+
+    let discount = props.cart.length > 2 ? 10 : 0;
+    console.log("props.cart: " ,props.cart);
+
+
+
+      // use filter to keep all the birds that DON'T have the id you are deleting. Using !==.
+      // make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
+      //add a delete button to each bird
+
+
+
+  return (
+    <div className="Cart">
+      <h3>Your cart</h3>
+      <ol>
+        {props.cart.map((bird) => {
+          (
+          <li key={uuid()}>{bird.name},   ${bird.amount} - <button className="deleteButton" id="deleteButton" 
+          onClick={() => { 
+            props.deleteBird(bird)
+          } }>
+          Delete This Bird
+          </button></li>
+        ))}
+      </ol>
+
+      {/* Display Bonus Items Earned */}
+      <p> Bonus items earned: </p>
+      <ul>
+      {props.funExtra.map((items) => (
+         <li key={uuid()}> {items} </li> 
+         ))}
+
+      </ul> 
+      
+      <p></p>
+      <p>
+        Discount: <span id="discount-amount">{discount}%</span>
+      </p>
+
+      
+        <h4>
+          Total: $<span>{(discount === 0) ?  props.total : (props.total)*.9}</span>
+        </h4>
+
+        <p className="success-alert" id="success-alert"></p>
+      
+    </div>
+  );
+}
+
+export default Cart;
+
+
+      // Using randomizer to generate a unique idea for each bird in cart. This is not a great way to do it. Try UUID instead.
+
+      // Calculate total cost of all birds in the cart. Then if discount doesn't equal zero, multiply it by .90. 
