@@ -1,15 +1,4 @@
 Current problems
-1)  How do i make unique IDs?
-2)  How do prices go into the cart? How do I get total price?
-   A) let cartTotal = 0
-      cart.forEach((bird)=> {
-      cartTotal += bird.amount 
-      })
-    B)  const addToCart = (bird) => {
-      const updatedBird = { ...bird, id: `${bird.id}-${randomizer}` };
-      setCart([...cart, updatedBird]);
-      setTotal((prevTotal) => prevTotal + bird.price);
-      }
 3)  How do i get bonus items in cart? 
       function getBonusItems(total) {
       let bonuses = [];
@@ -27,16 +16,37 @@ Current problems
       }
       return bonuses;
     }
-4) I need a remove button next to each bird.
 5) Do I even have the functions in the right component?
 6) How do I get the checkout and the Cart on the left>
-7) I need to move the submit button from the Cart to the checkout.
 8) Should  cart={cart} setCart={setCart}  be in Cart AND Checkout?
+9) Should the delete button be on click or should it be an anonymous function and what is the difference?
 
 
+DONE 1)  How do i make unique IDs?
+DONE 2)  How do prices go into the cart? How do I get total price?
+   A) let cartTotal = 0
+      cart.forEach((bird)=> {
+      cartTotal += bird.amount 
+      })
+    B)  const addToCart = (bird) => {
+      const updatedBird = { ...bird, id: `${bird.id}-${randomizer}` };
+      setCart([...cart, updatedBird]);
+      setTotal((prevTotal) => prevTotal + bird.price);
+      }
+DONE 4) I need a remove button next to each bird.
+DONE 7) I need to move the submit button from the Cart to the checkout.
 
 
-  
+  ================== part of App ================
+   
+/*  const [show, setShow] = useState(true)
+ 
+    // setCart((prevCart => ({
+    //   ...prevCart,
+    //   birds: [...prevCart.birds, bird],
+    //   total: prevCart.total + bird.amount,
+    // }))); */
+
 
 ==============  from Cart  ==========================
 This is not required:
@@ -57,24 +67,24 @@ This is not required:
 
 ================
 from BirdCard
-// <h2>{props.birdy.name}</h2>
-//<p>Price: ${props.birdy.amount} OR {amount}</p>
-// <p>id: {props.birdy.id}</p> OR {id}
-// <img alt="profile pic" src="{props.birdy.image}/> */}
-//
+  // <h2>{props.birdy.name}</h2>
+  //<p>Price: ${props.birdy.amount} OR {amount}</p>
+  // <p>id: {props.birdy.id}</p> OR {id}
+  // <img alt="profile pic" src="{props.birdy.image}/> */}
+  //
 ===================================================
 
-// DONE  The cart has a class name of Cart
-// When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
-// The total shows up as an <h4> element inside the cart
-// When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
-// When there are less than 3 birds in the cart there is a 0% discount
-// When there are 3 or more birds in the cart there is a 10% discount
-
-// I can complete the inputs in the checkout form.
-// When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
-//  DONE  Alert text should include: You have adopted birds. Thank you!
-// When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
+// DONE  
+  //The cart has a class name of Cart
+  // When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
+  // The total shows up as an <h4> element inside the cart
+  // When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
+  // When there are less than 3 birds in the cart there is a 0% discount
+  // When there are 3 or more birds in the cart there is a 10% discount
+  // I can complete the inputs in the checkout form.
+  // When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
+  //  DONE  Alert text should include: You have adopted birds. Thank you!
+  // When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
 
 //
 
@@ -86,10 +96,7 @@ from BirdCard
 
 // <h4>Total: <span>${totalCost}</span></h4>
 
-
-
-==========================================
-
+============  CART  ==============================
 
 /*
   // const cart = JSON.parse(localStorage.getItem("cart")) || {
@@ -119,8 +126,15 @@ from BirdCard
   // }
 
 
-*/
 
+
+ function Cart(props) {
+    //should this be props or should it be { total, updateBird, deleteBird } and if so, what is the difference?
+
+This is just two different ways to do the same thing, onw deconstructed, tbhe other with props.
+
+
+*/
 
 
 ===============================
@@ -228,8 +242,6 @@ Got rid of this in BirdLayout
      </section>
 
 */---------------------------------
-
-
 
 I am having some weird problems with CSS. I will move all the code here for now.
 
@@ -339,26 +351,6 @@ for the Cart, this is what I had before:
 
 export default Cart;
 
-// DONE  The cart has a class name of Cart
-// When I click on a bird card's adopt button, its name appears in the cart as an <ol> list item.
-// The total shows up as an <h4> element inside the cart
-// When I click on an additional item, the total cost is updated and additional bird name(s) is added as a list item to the unordered list
-// When there are less than 3 birds in the cart there is a 0% discount
-// When there are 3 or more birds in the cart there is a 10% discount
-
-// I can complete the inputs in the checkout form.
-// When I complete the form with valid input and click Submit, an alert tells me the purchase was successful.
-//  DONE  Alert text should include: You have adopted birds. Thank you!
-// When I close the alert box, the cart component should fully reset (no birds, no discount, total = 0, no bonus items listed)
-
-//
-
-// function emptyFunction(){
-//   document.createElement("p").value = "emptyFunction"
-// }
-
-//
-
 //  <h4>Total: <span>`${totalCost}</span></h4>
 =================
 
@@ -397,3 +389,74 @@ export default Cart;
         </BirdLayout>
 
         */
+
+
+
+
+
+        =========
+
+
+import uuid from 'react-uuid';
+
+
+ function Cart(props) {
+
+
+    let discount = props.cart.length > 2 ? 10 : 0;
+    console.log("props.cart: " ,props.cart);
+
+
+
+      // use filter to keep all the birds that DON'T have the id you are deleting. Using !==.
+      // make sure that the ids are not the same when they are added to the cart - changed keys to UUIDs
+      //add a delete button to each bird
+
+
+
+  return (
+    <div className="Cart">
+      <h3>Your cart</h3>
+      <ol>
+        {props.cart.map((bird) => {
+          (
+          <li key={uuid()}>{bird.name},   ${bird.amount} - <button className="deleteButton" id="deleteButton" 
+          onClick={() => { 
+            props.deleteBird(bird)
+          } }>
+          Delete This Bird
+          </button></li>
+        ))}
+      </ol>
+
+      {/* Display Bonus Items Earned */}
+      <p> Bonus items earned: </p>
+      <ul>
+      {props.funExtra.map((items) => (
+         <li key={uuid()}> {items} </li> 
+         ))}
+
+      </ul> 
+      
+      <p></p>
+      <p>
+        Discount: <span id="discount-amount">{discount}%</span>
+      </p>
+
+      
+        <h4>
+          Total: $<span>{(discount === 0) ?  props.total : (props.total)*.9}</span>
+        </h4>
+
+        <p className="success-alert" id="success-alert"></p>
+      
+    </div>
+  );
+}
+
+export default Cart;
+
+
+      // Using randomizer to generate a unique idea for each bird in cart. This is not a great way to do it. Try UUID instead.
+
+      // Calculate total cost of all birds in the cart. Then if discount doesn't equal zero, multiply it by .90. 

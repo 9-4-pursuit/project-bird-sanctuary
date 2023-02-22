@@ -1,8 +1,5 @@
-
 import "../App.css";
-
 function CheckOut (props ) {
-
 
 
 //should I handleCheckOut here or in cart or in app?
@@ -13,43 +10,39 @@ function CheckOut (props ) {
 
 
   return (
-    <>
+    <div className="none">
     <form className="Checkout">
     <h4>Checkout</h4>
 
     <fieldset>
           <label>
             <p> First Name </p>
-            <input type="text" name="first-name" />
+            <input type="text" className="first-name" />
           </label>
     </fieldset>
-
-
-
     <fieldset>
           <label>
             <p> Last Name </p>
-            <input type="text" name="last-name" />
+            <input type="text" className="last-name" />
           </label>
     </fieldset>
-
     <fieldset>
           <label>
             <p> Email </p>
-            <input type="email" name="email" />
+            <input type="email" className="email" />
           </label>
      </fieldset>
 
      <fieldset>
           <label>
             <p> Zip Code </p>
-            <input type="number" name="zip-code" />
+            <input type="number" className="zip-code" />
           </label>
      </fieldset>
 
 
-        <button
-          className="submit"
+        <input
+          className="flair"
           type="submit"
           content="Submit"
           onClick={() => {
@@ -61,20 +54,13 @@ function CheckOut (props ) {
             //    bonuses: [],
             //  });
           }}
-        >
-          Submit
-        </button>
+        />
+
         <p className="success-alert" id="success-alert"></p>
-      
-
-
 </form>
-</>
+</div>
     )
 }
-
-
-
 
 
 

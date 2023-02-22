@@ -1,6 +1,4 @@
-// import { useState } from "react";
 import React from "react";
-
 
 function BirdCard(props) {
 
@@ -17,7 +15,7 @@ function BirdCard(props) {
       <div className="image-box">
         <img alt={`${name} profile pic`} src={img} />
       </div>
-      <div className="details">
+      <div className="birds">
         <h2>{name}</h2>
         <p>Price: ${amount}</p>
         <p>id: {id}</p>
