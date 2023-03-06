@@ -39,7 +39,7 @@ function Cart ({ cart, setCart }) {
     }, [total])
 
     function removeBird(birdIndex) {
-        const filteredCart = cart.filter((bird, index) => index != birdIndex);
+        const filteredCart = cart.filter((bird, index) => index !== birdIndex);
         setCart(filteredCart);
     }
 

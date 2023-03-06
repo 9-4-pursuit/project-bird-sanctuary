@@ -1,6 +1,6 @@
-import Birds from "./components/Birds";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
+import Birds from "./Components/Birds";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 import { useState } from "react";
 import './App.css'
 
